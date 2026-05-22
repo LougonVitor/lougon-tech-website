@@ -1,0 +1,21 @@
+.cta-band {
+    background: linear-gradient(120deg, #042c53 0%, #0c447c 60%, #085041 100%);
+    padding: 60px 40px;
+    text-align: center;
+}
+
+.cta-band h2 {
+    font-family: 'Sora', sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: #fff;
+    margin: 0 0 12px;
+    letter-spacing: -0.5px;
+}
+
+.cta-band p {
+    font-size: 15px;
+    color: rgba(255,255,255,0.6);
+    margin: 0 0 28px;
+    font-weight: 300;
+}
