@@ -1,0 +1,30 @@
+.statistics-container {
+    background: #ffffff;
+    border-bottom: 0.5px solid #d0dcea;
+    padding: 0 40px;
+    display: flex;
+    justify-content: center;
+    gap: 0;
+}
+
+.statistic-box {
+    padding: 22px 40px;
+    text-align: center;
+    border-right: 0.5px solid #e2eaf3;
+}
+
+.statistic-box:last-child { border-right: none; }
+
+.statistic-box-num {
+    font-family: 'Sora', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #0c447c;
+}
+
+.statistic-box-label {
+    font-size: 12px;
+    color: #7a99b8;
+    margin-top: 2px;
+    letter-spacing: 0.3px;
+}
