@@ -1,21 +1,37 @@
 .footer {
-    background: #0c1f3a;
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border);
     padding: 28px 40px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
 }
 
 .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
     font-family: 'Sora', sans-serif;
     font-weight: 700;
     font-size: 16px;
-    color: #ffffff;
+    color: var(--text-primary);
 }
 
-.footer-logo span { color: #5dcaa5; }
+.footer-logo-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.footer-logo span {
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 
 .footer-copy {
     font-size: 12px;
-    color: #4a6a88;
+    color: var(--text-muted);
 }
