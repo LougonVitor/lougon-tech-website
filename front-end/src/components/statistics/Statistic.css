@@ -1,16 +1,17 @@
 .statistics-container {
-    background: #ffffff;
-    border-bottom: 0.5px solid #d0dcea;
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border);
     padding: 0 40px;
     display: flex;
     justify-content: center;
     gap: 0;
+    flex-wrap: wrap;
 }
 
 .statistic-box {
     padding: 22px 40px;
     text-align: center;
-    border-right: 0.5px solid #e2eaf3;
+    border-right: 1px solid var(--border);
 }
 
 .statistic-box:last-child { border-right: none; }
@@ -19,12 +20,15 @@
     font-family: 'Sora', sans-serif;
     font-size: 24px;
     font-weight: 700;
-    color: #0c447c;
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .statistic-box-label {
     font-size: 12px;
-    color: #7a99b8;
+    color: var(--text-muted);
     margin-top: 2px;
     letter-spacing: 0.3px;
 }

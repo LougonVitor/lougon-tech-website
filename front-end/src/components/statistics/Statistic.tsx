@@ -5,7 +5,7 @@ export function Statistic() {
     <>
     <div className="statistics-container">
         <div className="statistic-box">
-            <div className="statistic-box-num">2+</div>
+            <div className="statistic-box-num">3+</div>
             <div className="statistic-box-label">Products launched</div>
         </div>
             <div className="statistic-box">
