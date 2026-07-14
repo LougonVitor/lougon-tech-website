@@ -30,6 +30,8 @@ export function Products() {
         </a>
 
         <div className="product-card product-card-audit">
+            <div className="product-coming-soon">In development</div>
+
             <div className="product-card-icon product-card-icon-blue">
                 <i className="ti ti-clipboard-check" aria-hidden="true"></i>
             </div>
@@ -47,6 +49,8 @@ export function Products() {
         </div>
 
         <div className="product-card product-card-dental">
+            <div className="product-coming-soon">In development</div>
+
             <div className="product-card-icon product-card-icon-teal">
                 <i className="ti ti-tooth" aria-hidden="true"></i>
             </div>
@@ -77,7 +81,7 @@ export function Products() {
             <div className="product-card-tags">
                 <span className="product-tag product-tag-gray">In development</span>
             </div>
-            <a className="product-card-link" /* onclick="sendPrompt('I want to suggest a product idea for Lougon.tech')" */>Suggest an idea <i className="ti ti-arrow-right" aria-hidden="true"></i></a>
+            <a className="product-card-link" href="mailto:tech@lougon.tech?subject=Product%20idea%20for%20Lougon.tech">Suggest an idea <i className="ti ti-arrow-right" aria-hidden="true"></i></a>
         </div>
 
         </div>
