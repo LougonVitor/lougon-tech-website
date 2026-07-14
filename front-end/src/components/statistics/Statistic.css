@@ -32,3 +32,20 @@
     margin-top: 2px;
     letter-spacing: 0.3px;
 }
+
+@media (max-width: 640px) {
+    .statistics-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 0 20px;
+    }
+
+    .statistic-box {
+        padding: 18px 12px;
+        border-right: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+    }
+
+    .statistic-box:nth-child(2n) { border-right: none; }
+    .statistic-box:nth-last-child(-n+2) { border-bottom: none; }
+}
