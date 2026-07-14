@@ -9,13 +9,18 @@
       <stop offset="60%" stop-color="#7C9BFF" stop-opacity="0.15"></stop>
       <stop offset="100%" stop-color="#7C9BFF" stop-opacity="0"></stop>
     </radialGradient>
+    <clipPath id="clip2a">
+      <rect x="0" y="0" width="120" height="120" rx="26"></rect>
+    </clipPath>
   </defs>
-  <rect x="0" y="0" width="120" height="120" fill="#140F1F"></rect>
-  <rect x="0" y="0" width="120" height="120" fill="url(#glow2a)"></rect>
-  <line x1="60" y1="22" x2="25" y2="88" stroke="url(#g2a)" stroke-width="4" stroke-linecap="round"></line>
-  <line x1="60" y1="22" x2="95" y2="88" stroke="url(#g2a)" stroke-width="4" stroke-linecap="round"></line>
-  <line x1="25" y1="88" x2="95" y2="88" stroke="url(#g2a)" stroke-width="4" stroke-linecap="round"></line>
-  <circle cx="60" cy="22" r="11" fill="url(#g2a)"></circle>
-  <circle cx="25" cy="88" r="11" fill="url(#g2a)"></circle>
-  <circle cx="95" cy="88" r="11" fill="url(#g2a)"></circle>
+  <g clip-path="url(#clip2a)">
+    <rect x="0" y="0" width="120" height="120" fill="#140F1F"></rect>
+    <rect x="0" y="0" width="120" height="120" fill="url(#glow2a)"></rect>
+    <line x1="60" y1="22" x2="25" y2="88" stroke="url(#g2a)" stroke-width="4" stroke-linecap="round"></line>
+    <line x1="60" y1="22" x2="95" y2="88" stroke="url(#g2a)" stroke-width="4" stroke-linecap="round"></line>
+    <line x1="25" y1="88" x2="95" y2="88" stroke="url(#g2a)" stroke-width="4" stroke-linecap="round"></line>
+    <circle cx="60" cy="22" r="11" fill="url(#g2a)"></circle>
+    <circle cx="25" cy="88" r="11" fill="url(#g2a)"></circle>
+    <circle cx="95" cy="88" r="11" fill="url(#g2a)"></circle>
+  </g>
 </svg>
