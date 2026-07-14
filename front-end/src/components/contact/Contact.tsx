@@ -1,14 +1,17 @@
 import './Contact.css'
+import { useLanguage } from '../../i18n/LanguageContext'
 
 export function Contact() {
+    const { t } = useLanguage();
+
     return(
     <>
     <section className="cta-band" id="contact">
-        <h2>Ready to modernize your business — or your portfolio?</h2>
-        <p>Schedule a free demo for your company, or try Profitly for your own investments.</p>
+        <h2>{t.contact.title}</h2>
+        <p>{t.contact.sub}</p>
         <div className="cta-actions">
-            <a className="btn-primary cta-link" href="mailto:tech@lougon.tech?subject=Demo%20request">Schedule a free demo</a>
-            <a className="btn-outline cta-link" href="https://profitly.lougon.tech" target="_blank" rel="noopener noreferrer">Try Profitly</a>
+            <a className="btn-primary cta-link" href="mailto:tech@lougon.tech?subject=Demo%20request">{t.contact.scheduleDemo}</a>
+            <a className="btn-outline cta-link" href="https://profitly.lougon.tech" target="_blank" rel="noopener noreferrer">{t.contact.tryProfitly}</a>
         </div>
     </section>
     </>

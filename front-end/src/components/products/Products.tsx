@@ -1,87 +1,90 @@
 import './Products.css'
+import { useLanguage } from '../../i18n/LanguageContext'
 
 export function Products() {
+    const { t } = useLanguage();
+
     return (
     <>
     <section className="product-section" id="products">
-        <div className="product-section-label">Our products</div>
-        <h2 className="product-section-title">Software for businesses and investors</h2>
-        <p className="product-section-sub">Purpose-built systems designed to solve real problems — for companies running their operations, and for people managing their own money.</p>
+        <div className="product-section-label">{t.products.label}</div>
+        <h2 className="product-section-title">{t.products.title}</h2>
+        <p className="product-section-sub">{t.products.sub}</p>
 
         <div className="product-products">
 
         <a className="product-card product-card-profitly" href="https://profitly.lougon.tech" target="_blank" rel="noopener noreferrer">
-            <div className="product-live-badge"><span className="product-live-dot"></span>Live beta</div>
+            <div className="product-live-badge"><span className="product-live-dot"></span>{t.products.liveBeta}</div>
 
             <div className="product-card-icon product-card-icon-gradient">
                 <i className="ti ti-chart-candle" aria-hidden="true"></i>
             </div>
 
-            <div className="product-card-name">Profitly</div>
+            <div className="product-card-name">{t.products.profitlyName}</div>
 
-            <p className="product-card-desc">Our B2C investing platform. Compare assets, track the Brazilian market in real time, and manage your own portfolio — dividends, rankings, and market pulse in one place.</p>
+            <p className="product-card-desc">{t.products.profitlyDesc}</p>
 
             <div className="product-card-tags">
-                <span className="product-tag product-tag-gradient">B2C</span>
-                <span className="product-tag product-tag-blue">Investing</span>
-                <span className="product-tag product-tag-gray">Real-time data</span>
+                <span className="product-tag product-tag-gradient">{t.products.tagB2C}</span>
+                <span className="product-tag product-tag-blue">{t.products.tagInvesting}</span>
+                <span className="product-tag product-tag-gray">{t.products.tagRealTime}</span>
             </div>
-            <span className="product-card-link">Open Profitly <i className="ti ti-arrow-up-right" aria-hidden="true"></i></span>
+            <span className="product-card-link">{t.products.openProfitly} <i className="ti ti-arrow-up-right" aria-hidden="true"></i></span>
         </a>
 
         <div className="product-card product-card-audit">
-            <div className="product-coming-soon">In development</div>
+            <div className="product-coming-soon">{t.products.inDevelopment}</div>
 
             <div className="product-card-icon product-card-icon-blue">
                 <i className="ti ti-clipboard-check" aria-hidden="true"></i>
             </div>
 
-            <div className="product-card-name">Audit System</div>
+            <div className="product-card-name">{t.products.auditName}</div>
 
-            <p className="product-card-desc">Complete audit management platform. Plan, execute, and report internal and external audits with full traceability and compliance control.</p>
+            <p className="product-card-desc">{t.products.auditDesc}</p>
 
             <div className="product-card-tags">
-                <span className="product-tag product-tag-blue">Compliance</span>
-                <span className="product-tag product-tag-teal">Reporting</span>
-                <span className="product-tag product-tag-gray">Multi-user</span>
+                <span className="product-tag product-tag-blue">{t.products.tagCompliance}</span>
+                <span className="product-tag product-tag-teal">{t.products.tagReporting}</span>
+                <span className="product-tag product-tag-gray">{t.products.tagMultiUser}</span>
             </div>
-            <a className="product-card-link">Learn more <i className="ti ti-arrow-right" aria-hidden="true"></i></a>
+            <a className="product-card-link">{t.products.learnMore} <i className="ti ti-arrow-right" aria-hidden="true"></i></a>
         </div>
 
         <div className="product-card product-card-dental">
-            <div className="product-coming-soon">In development</div>
+            <div className="product-coming-soon">{t.products.inDevelopment}</div>
 
             <div className="product-card-icon product-card-icon-teal">
                 <i className="ti ti-tooth" aria-hidden="true"></i>
             </div>
 
-            <div className="product-card-name">Dental System</div>
+            <div className="product-card-name">{t.products.dentalName}</div>
 
-            <p className="product-card-desc">A complete clinic management solution — scheduling, patient records, billing, and treatment history all in one place.</p>
+            <p className="product-card-desc">{t.products.dentalDesc}</p>
 
             <div className="product-card-tags">
-                <span className="product-tag product-tag-teal">Scheduling</span>
-                <span className="product-tag product-tag-blue">Patient records</span>
-                <span className="product-tag product-tag-gray">Billing</span>
+                <span className="product-tag product-tag-teal">{t.products.tagScheduling}</span>
+                <span className="product-tag product-tag-blue">{t.products.tagPatientRecords}</span>
+                <span className="product-tag product-tag-gray">{t.products.tagBilling}</span>
             </div>
-            <a className="product-card-link">Learn more <i className="ti ti-arrow-right" aria-hidden="true"></i></a>
+            <a className="product-card-link">{t.products.learnMore} <i className="ti ti-arrow-right" aria-hidden="true"></i></a>
         </div>
 
         <div className="product-card product-card-plus" /* style="border-style: dashed; opacity: 0.75;" */>
-            <div className="product-coming-soon">Coming soon</div>
+            <div className="product-coming-soon">{t.products.comingSoon}</div>
 
             <div className="product-card-icon product-card-icon-sky">
                 <i className="ti ti-sparkles" aria-hidden="true"></i>
             </div>
 
-            <div className="product-card-name">More on the way</div>
+            <div className="product-card-name">{t.products.moreName}</div>
 
-            <p className="product-card-desc">We're constantly building new solutions. Have a specific need? Let's talk — we might be working on exactly what you need.</p>
+            <p className="product-card-desc">{t.products.moreDesc}</p>
 
             <div className="product-card-tags">
-                <span className="product-tag product-tag-gray">In development</span>
+                <span className="product-tag product-tag-gray">{t.products.tagInDevelopment}</span>
             </div>
-            <a className="product-card-link" href="mailto:tech@lougon.tech?subject=Product%20idea%20for%20Lougon.tech">Suggest an idea <i className="ti ti-arrow-right" aria-hidden="true"></i></a>
+            <a className="product-card-link" href="mailto:tech@lougon.tech?subject=Product%20idea%20for%20Lougon.tech">{t.products.suggestIdea} <i className="ti ti-arrow-right" aria-hidden="true"></i></a>
         </div>
 
         </div>
