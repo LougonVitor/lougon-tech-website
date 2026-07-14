@@ -5,11 +5,11 @@ export function Features() {
     <>
     <section className="features">
         <div className="features-inner">
-            <div className="section-label">Why Lougon</div>
+            <div className="section-label" id="why">Why Lougon</div>
 
             <h2 className="section-title" /* style="margin:0 0 6px;" */>Built differently, by design</h2>
 
-            <p className="section-sub" /* style="margin:0;" */>We care about the details that make software actually enjoyable to use.</p>
+            <p className="section-sub" /* style="margin:0;" */>We care about the details that make software actually enjoyable to use — whether you're a company or an individual investor.</p>
 
             <div className="feat-grid">
                 <div className="feat-item">
