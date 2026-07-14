@@ -54,6 +54,7 @@
 .header-nav-links a:hover { color: var(--text-primary); }
 
 .header-nav-cta {
+    display: inline-block;
     background: var(--gradient);
     color: #fff;
     border: none;
@@ -62,6 +63,7 @@
     font-family: 'DM Sans', sans-serif;
     font-size: 14px;
     font-weight: 500;
+    text-decoration: none;
     cursor: pointer;
     transition: box-shadow 0.2s, transform 0.15s;
 }

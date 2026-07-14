@@ -14,7 +14,7 @@ export function Header() {
                 <a href="#why">About</a>
                 <a href="#contact">Contact</a>
             </div>
-            <button className="header-nav-cta" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>Request a demo</button>
+            <a className="header-nav-cta" href="mailto:tech@lougon.tech?subject=Demo%20request">Request a demo</a>
         </nav>
     </>
     )
