@@ -81,18 +81,6 @@ export function HeroSection() {
                                 <span><Icon name="wallet" size={14} /> Carteira de investimentos</span>
                             </div>
                         </div>
-                        <a href={`#${SECTION_IDS.founder}`} className="pf-hero-free-note">
-                            <Icon name="crown" size={15} />
-                            <span>
-                                Recursos avançados de IA só no <b>Plano Fundador</b> — por tempo limitado, preço único e vagas limitadas.
-                            </span>
-                        </a>
-                    </div>
-
-                    <div className="pf-hero-actions">
-                        <a href={`#${SECTION_IDS.founder}`} className="pf-btn-primary">
-                            Conhecer o Plano Fundador <Icon name="arrowRight" size={16} />
-                        </a>
                     </div>
 
                     <div className="pf-hero-rating">
