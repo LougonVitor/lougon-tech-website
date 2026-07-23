@@ -1,0 +1,48 @@
+.pf-feature {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+}
+
+.pf-feature-icon {
+    flex-shrink: 0;
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(167, 139, 250, 0.12);
+    color: var(--pf-purple-light);
+}
+
+.pf-feature-icon-soon {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--pf-text-dim);
+}
+
+.pf-feature-body {
+    min-width: 0;
+}
+
+.pf-feature-head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 3px;
+    flex-wrap: wrap;
+}
+
+.pf-feature-title {
+    font-size: 14.5px;
+    font-weight: 600;
+    color: var(--pf-text);
+}
+
+.pf-feature-desc {
+    font-size: 13.5px;
+    color: var(--pf-text-muted);
+    line-height: 1.55;
+    font-weight: 300;
+    margin: 0;
+}

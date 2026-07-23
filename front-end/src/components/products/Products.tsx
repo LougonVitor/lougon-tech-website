@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import './Products.css'
 import { useLanguage } from '../../i18n/LanguageContext'
 
@@ -13,7 +14,7 @@ export function Products() {
 
         <div className="product-products">
 
-        <a className="product-card product-card-profitly" href="https://profitly.lougon.tech" target="_blank" rel="noopener noreferrer">
+        <Link className="product-card product-card-profitly" to="/profitly">
             <div className="product-live-badge"><span className="product-live-dot"></span>{t.products.liveBeta}</div>
 
             <div className="product-card-icon product-card-icon-gradient">
@@ -29,8 +30,8 @@ export function Products() {
                 <span className="product-tag product-tag-blue">{t.products.tagInvesting}</span>
                 <span className="product-tag product-tag-gray">{t.products.tagRealTime}</span>
             </div>
-            <span className="product-card-link">{t.products.openProfitly} <i className="ti ti-arrow-up-right" aria-hidden="true"></i></span>
-        </a>
+            <span className="product-card-link">{t.products.openProfitly} <i className="ti ti-arrow-right" aria-hidden="true"></i></span>
+        </Link>
 
         <div className="product-card product-card-audit">
             <div className="product-coming-soon">{t.products.inDevelopment}</div>
