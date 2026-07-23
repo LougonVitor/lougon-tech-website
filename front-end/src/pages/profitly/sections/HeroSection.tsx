@@ -76,9 +76,10 @@ export function HeroSection() {
                                 <Icon name="check" size={13} /> Grátis para sempre
                             </span>
                             <div className="pf-hero-free-items">
-                                <span><Icon name="chart" size={14} /> Análise de ações</span>
-                                <span><Icon name="target" size={14} /> Preço teto</span>
                                 <span><Icon name="wallet" size={14} /> Carteira de investimentos</span>
+                                <span><Icon name="coins" size={14} /> Finanças pessoais</span>
+                                <span><Icon name="target" size={14} /> Preço teto</span>
+                                <span><Icon name="chart" size={14} /> Análise de ações</span>
                             </div>
                         </div>
                     </div>
