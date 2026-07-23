@@ -4,7 +4,6 @@ import { InvestmentsSection } from './sections/InvestmentsSection'
 import { FinanceSection } from './sections/FinanceSection'
 import { AdvancedAnalysisSection } from './sections/AdvancedAnalysisSection'
 import { FounderSection } from './sections/FounderSection'
-import { QualificationSection } from './sections/QualificationSection'
 import { Icon } from './components/icons'
 import './ProfitlyPage.css'
 
@@ -21,7 +20,6 @@ export function ProfitlyPage() {
             <FinanceSection />
             <AdvancedAnalysisSection />
             <FounderSection />
-            <QualificationSection />
         </div>
     )
 }

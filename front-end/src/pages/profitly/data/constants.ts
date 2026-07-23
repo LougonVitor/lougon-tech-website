@@ -8,5 +8,4 @@ export const SECTION_IDS = {
     finance: 'financas',
     analysis: 'analise-avancada',
     founder: 'plano-fundador',
-    qualification: 'acesso-antecipado',
 } as const

@@ -3,6 +3,8 @@ import { useCountdown } from '../hooks/useCountdown'
 import { FOUNDER_PLAN_SPOTS, PROFITLY_LAUNCH_DATE, SECTION_IDS } from '../data/constants'
 import './FounderSection.css'
 
+const FOUNDER_CONTACT_MAILTO = 'mailto:tech@lougon.tech?subject=Quero%20ser%20fundador%20da%20Profitly'
+
 function pad(value: number) {
     return value.toString().padStart(2, '0')
 }
@@ -73,8 +75,8 @@ export function FounderSection() {
                     ))}
                 </div>
 
-                <a href={`#${SECTION_IDS.qualification}`} className="pf-btn-primary">
-                    Verificar se tenho direito ao acesso antecipado <Icon name="arrowRight" size={16} />
+                <a href={FOUNDER_CONTACT_MAILTO} className="pf-btn-primary">
+                    Quero ser fundador da Profitly <Icon name="arrowRight" size={16} />
                 </a>
                 <p className="pf-founder-spots">Apenas {FOUNDER_PLAN_SPOTS} vagas disponíveis para o Plano Fundador.</p>
             </div>
