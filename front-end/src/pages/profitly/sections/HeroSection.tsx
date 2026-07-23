@@ -70,12 +70,6 @@ export function HeroSection() {
                         em insights claros para você evoluir sua saúde financeira.
                     </p>
 
-                    <div className="pf-hero-actions">
-                        <a href={`#${SECTION_IDS.founder}`} className="pf-btn-primary">
-                            Conhecer o Plano Fundador <Icon name="arrowRight" size={16} />
-                        </a>
-                    </div>
-
                     <div className="pf-hero-free-strip">
                         <div className="pf-hero-free-head">
                             <span className="pf-hero-free-badge">
@@ -92,6 +86,12 @@ export function HeroSection() {
                             <span>
                                 Recursos avançados de IA só no <b>Plano Fundador</b> — por tempo limitado, preço único e vagas limitadas.
                             </span>
+                        </a>
+                    </div>
+
+                    <div className="pf-hero-actions">
+                        <a href={`#${SECTION_IDS.founder}`} className="pf-btn-primary">
+                            Conhecer o Plano Fundador <Icon name="arrowRight" size={16} />
                         </a>
                     </div>
 
