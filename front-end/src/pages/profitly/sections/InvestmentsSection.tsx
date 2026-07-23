@@ -50,49 +50,35 @@ export function InvestmentsSection() {
                             title="Análise avançada por ativo"
                             description="30+ indicadores, preço justo (Graham, Bazin, Gordon), Magic Number de FIIs, Fear & Greed de cripto e mais."
                         />
-                    </div>
-                </div>
-
-                <div className="pf-inv-panel">
-                    <div className="pf-inv-panel-head">
-                        <Icon name="crown" size={18} className="pf-accent" />
-                        <span className="pf-inv-panel-title">Exclusivo do Plano Fundador</span>
-                    </div>
-                    <p className="pf-inv-panel-sub">
-                        Assinando agora, você garante acesso a todas essas funcionalidades assim que forem lançadas —
-                        sem pagar nada a mais por isso.
-                    </p>
-
-                    <div className="pf-inv-panel-list">
                         <FeatureItem
-                            status="soon"
                             icon="brain"
                             title="Análise inteligente da carteira com IA"
                             description="A IA analisa sua carteira e aponta possíveis pontos de melhoria e riscos de concentração."
                         />
                         <FeatureItem
-                            status="soon"
                             icon="calendar"
                             title="Relatório diário e semanal de desempenho"
                             description="Um resumo automático de como seus ativos performaram, direto para você."
                         />
                         <FeatureItem
-                            status="soon"
                             icon="sparkles"
                             title="Assessor de investimentos por IA"
                             description="Uma IA que analisa sua carteira continuamente e fornece insights personalizados."
                         />
-                    </div>
-
-                    <div className="pf-inv-roadmap">
-                        <span className="pf-inv-roadmap-chip">
-                            <Icon name="scan" size={14} /> Integração automática com a B3
-                        </span>
-                        <span className="pf-inv-roadmap-chip">
-                            <Icon name="layers" size={14} /> Integração direta com corretoras
-                        </span>
+                        <FeatureItem
+                            icon="scan"
+                            title="Integração automática com a B3"
+                            description="Sincronização direta com a B3, sem precisar importar extrato manualmente."
+                        />
+                        <FeatureItem
+                            icon="layers"
+                            title="Integração direta com corretoras"
+                            description="Dados de carteira e investimentos trazidos automaticamente direto da sua corretora."
+                        />
                     </div>
                 </div>
+
+                <div className="pf-inv-visual-slot" />
             </div>
         </section>
     )

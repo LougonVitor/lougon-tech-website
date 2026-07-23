@@ -50,39 +50,25 @@ export function FinanceSection() {
                             title="Exportação e importação em CSV"
                             description="Exporte seu histórico ou importe gastos em lote, com até 12 meses de retenção."
                         />
-                    </div>
-                </div>
-
-                <div className="pf-inv-panel">
-                    <div className="pf-inv-panel-head">
-                        <Icon name="crown" size={18} className="pf-accent" />
-                        <span className="pf-inv-panel-title">Exclusivo do Plano Fundador</span>
-                    </div>
-                    <p className="pf-inv-panel-sub">
-                        Novas funcionalidades de finanças pensadas para quem quer ir além do controle básico de gastos.
-                    </p>
-
-                    <div className="pf-inv-panel-list">
                         <FeatureItem
-                            status="soon"
                             icon="brain"
                             title="Análise dos gastos com IA"
                             description="A IA identifica padrões, anomalias e oportunidades de economia no seu orçamento."
                         />
                         <FeatureItem
-                            status="soon"
                             icon="target"
                             title="Direcionamentos personalizados"
                             description="Conteúdos e cursos recomendados de acordo com o seu padrão de controle financeiro."
                         />
                         <FeatureItem
-                            status="soon"
                             icon="sparkles"
                             title="Metas financeiras inteligentes"
                             description="Planejamento de metas com projeções ajustadas ao seu comportamento de gasto real."
                         />
                     </div>
                 </div>
+
+                <div className="pf-inv-visual-slot" />
             </div>
         </section>
     )
