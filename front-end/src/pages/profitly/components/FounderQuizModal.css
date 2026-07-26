@@ -1,0 +1,41 @@
+.pf-quiz-progress {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 20px;
+}
+
+.pf-quiz-dot {
+    flex: 1;
+    height: 4px;
+    border-radius: 99px;
+    background: var(--pf-border);
+}
+
+.pf-quiz-dot-active {
+    background: var(--pf-purple-light);
+}
+
+.pf-quiz-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.pf-quiz-option {
+    text-align: left;
+    background: var(--pf-bg-alt);
+    border: 1px solid var(--pf-border);
+    border-radius: 12px;
+    padding: 13px 16px;
+    font-size: 14px;
+    font-family: inherit;
+    color: var(--pf-text);
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s;
+}
+
+.pf-quiz-option:hover {
+    border-color: var(--pf-purple-light);
+    background: var(--pf-card-hover);
+}
