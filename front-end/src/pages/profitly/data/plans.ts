@@ -17,7 +17,7 @@ export interface PlanFeatureGroup {
     features: PlanFeature[]
 }
 
-export type PlanCtaAction = 'leadForm' | 'quiz'
+export type PlanCtaAction = 'leadForm' | 'founderForm'
 
 export interface Plan {
     id: string
@@ -126,6 +126,6 @@ export const PLANS: Plan[] = [
             },
         ],
         ctaLabel: 'Quero uma das 50 vagas',
-        ctaAction: 'quiz',
+        ctaAction: 'founderForm',
     },
 ]

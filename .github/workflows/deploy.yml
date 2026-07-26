@@ -29,6 +29,8 @@ jobs:
       - name: Gerar build
         working-directory: front-end
         run: npm run build
+        env:
+          VITE_GOOGLE_SHEETS_WEBHOOK_URL: ${{ secrets.VITE_GOOGLE_SHEETS_WEBHOOK_URL }}
 
       - name: Publicar na Hostinger
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5

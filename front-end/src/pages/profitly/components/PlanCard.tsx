@@ -2,7 +2,7 @@ import { useState } from 'react'
 import type { Plan } from '../data/plans'
 import { Icon } from './icons'
 import { LeadFormModal } from './LeadFormModal'
-import { FounderQuizModal } from './FounderQuizModal'
+import { FounderLeadFormModal } from './FounderLeadFormModal'
 import './PlanCard.css'
 
 interface PlanCardProps {
@@ -73,8 +73,8 @@ export function PlanCard({ plan }: PlanCardProps) {
             {modalOpen && plan.ctaAction === 'leadForm' && (
                 <LeadFormModal onClose={() => setModalOpen(false)} />
             )}
-            {modalOpen && plan.ctaAction === 'quiz' && (
-                <FounderQuizModal onClose={() => setModalOpen(false)} />
+            {modalOpen && plan.ctaAction === 'founderForm' && (
+                <FounderLeadFormModal onClose={() => setModalOpen(false)} />
             )}
         </div>
     )
