@@ -75,6 +75,7 @@
     right: 8px;
 }
 
+/* O `bottom` vem do componente: acompanha a base do slide ativo, não a do slot. */
 .pf-slideshow-dots {
     position: absolute;
     left: 50%;
@@ -89,6 +90,11 @@
     background: rgba(10, 10, 18, 0.75);
     backdrop-filter: blur(6px);
     border: 1px solid var(--pf-border);
+}
+
+/* Desce a própria altura + respiro para ficar logo abaixo da imagem. */
+.pf-slideshow-dots.is-below-slide {
+    transform: translateX(-50%) translateY(calc(100% + 12px));
 }
 
 .pf-slideshow-dot {

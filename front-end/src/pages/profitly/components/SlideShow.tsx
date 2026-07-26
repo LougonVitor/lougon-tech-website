@@ -96,6 +96,13 @@ export function SlideShow({ images }: SlideShowProps) {
         return before - (box.width - sizes[index].width) / 2
     }, [sizes, index, box])
 
+    // Folga entre a base do slide ativo e a base do slot — o slide é centralizado
+    // na vertical, então é metade do espaço que sobra.
+    const spaceBelowSlide = sizes[index] ? Math.max(0, (box.height - sizes[index].height) / 2) : 0
+    // Com folga suficiente as bolinhas ficam abaixo da imagem; senão, sobrepõem a
+    // base dela. Ancorar no fundo do slot as deixava cortadas na borda da seção.
+    const dotsBelowSlide = spaceBelowSlide >= 46
+
     return (
         <div className="pf-slideshow" ref={rootRef}>
             <div className="pf-slideshow-track" style={{ transform: `translateX(${-offset}px)` }}>
@@ -132,7 +139,10 @@ export function SlideShow({ images }: SlideShowProps) {
                 </>
             )}
 
-            <div className="pf-slideshow-dots">
+            <div
+                className={`pf-slideshow-dots${dotsBelowSlide ? ' is-below-slide' : ''}`}
+                style={{ bottom: dotsBelowSlide ? spaceBelowSlide : spaceBelowSlide + 10 }}
+            >
                 {images.map((image, i) => (
                     <button
                         key={image.src}
