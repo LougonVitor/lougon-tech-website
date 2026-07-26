@@ -47,6 +47,10 @@ export const PLANS: Plan[] = [
                     { text: 'Adicione ativos manualmente' },
                     { text: 'Adicione ativos importando pelo extrato da B3' },
                     { text: 'Analise a evolução do seu patrimônio, renda e proventos' },
+                    {
+                        text: 'Personalização completa da forma como sua carteira é apresentada — gráficos, classes etc. Deixe seus investimentos do seu jeito de analisar',
+                        soon: true,
+                    },
                 ],
             },
             {
@@ -87,6 +91,10 @@ export const PLANS: Plan[] = [
                     { text: 'Declaração de IRPF', soon: true },
                     { text: 'Análise avançada de ações' },
                     { text: 'Analise a evolução do seu patrimônio, renda e proventos' },
+                    {
+                        text: 'Personalização completa da forma como sua carteira é apresentada — gráficos, classes etc. Deixe seus investimentos do seu jeito de analisar',
+                        soon: true,
+                    },
                 ],
             },
             {

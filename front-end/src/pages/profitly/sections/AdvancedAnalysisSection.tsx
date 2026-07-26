@@ -4,6 +4,11 @@ import './AdvancedAnalysisSection.css'
 
 const IDEAS = [
     {
+        icon: 'brain' as const,
+        title: 'IA que percorre os relatórios trimestrais das empresas',
+        description: 'Uma IA que lê os relatórios trimestrais das empresas e resume os pontos que realmente importam para a sua análise.',
+    },
+    {
         icon: 'scan' as const,
         title: 'Scanner de mercado multi-critério',
         description: 'Filtros combinando indicadores fundamentalistas e técnicos para encontrar oportunidades em segundos.',
@@ -27,11 +32,6 @@ const IDEAS = [
         icon: 'trendingUp' as const,
         title: 'Fluxo institucional e volume anômalo',
         description: 'Sinais de movimentação atípica de grandes players para identificar mudanças de tendência mais cedo.',
-    },
-    {
-        icon: 'globe' as const,
-        title: 'Acesso a mercados internacionais',
-        description: 'Compare ativos da B3 com ações e ETFs internacionais dentro do mesmo painel de análise.',
     },
 ]
 
