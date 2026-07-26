@@ -57,7 +57,7 @@ export function FounderQuizModal({ onClose }: FounderQuizModalProps) {
                 <h3 className="pf-lead-title">Quase lá!</h3>
                 <p className="pf-lead-sub">
                     Suas respostas foram salvas! Preencha seus dados abaixo para reservar uma das 50 vagas do Plano
-                    Fundador.
+                    Fundador. Entraremos em contato se seu perfil se enquadrar!
                 </p>
 
                 <form className="pf-lead-form" onSubmit={handleSubmit}>
