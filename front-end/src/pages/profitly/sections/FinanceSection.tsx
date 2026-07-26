@@ -1,7 +1,18 @@
 import { FeatureItem } from '../components/FeatureItem'
 import { Icon } from '../components/icons'
+import { SlideShow } from '../components/SlideShow'
 import { SECTION_IDS } from '../data/constants'
 import '../components/SplitPanel.css'
+
+import finHero from '../../../assets/profitly/fin-hero.png'
+import finExpenses from '../../../assets/profitly/fin-expenses.png'
+import finGoals from '../../../assets/profitly/fin-goals.png'
+
+const financeSlides = [
+    { src: finHero, alt: 'Painel de finanças pessoais do Profitly' },
+    { src: finExpenses, alt: 'Evolução de gastos e renda do Profitly' },
+    { src: finGoals, alt: 'Objetivos e metas do Profitly' },
+]
 
 export function FinanceSection() {
     return (
@@ -68,7 +79,9 @@ export function FinanceSection() {
                     </div>
                 </div>
 
-                <div className="pf-inv-visual-slot" />
+                <div className="pf-inv-visual-slot">
+                    <SlideShow images={financeSlides} />
+                </div>
             </div>
         </section>
     )

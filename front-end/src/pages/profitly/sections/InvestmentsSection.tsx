@@ -1,7 +1,18 @@
 import { FeatureItem } from '../components/FeatureItem'
 import { Icon } from '../components/icons'
+import { SlideShow } from '../components/SlideShow'
 import { SECTION_IDS } from '../data/constants'
 import '../components/SplitPanel.css'
+
+import invWallet from '../../../assets/profitly/inv-wallet.png'
+import invStockAnalysis from '../../../assets/profitly/inv-stock-analysis.png'
+import invStockComparator from '../../../assets/profitly/inv-stock-comparator.png'
+
+const investmentSlides = [
+    { src: invWallet, alt: 'Carteira de investimentos do Profitly' },
+    { src: invStockAnalysis, alt: 'Análise de ativo do Profitly' },
+    { src: invStockComparator, alt: 'Comparador de ações do Profitly' },
+]
 
 export function InvestmentsSection() {
     return (
@@ -78,7 +89,9 @@ export function InvestmentsSection() {
                     </div>
                 </div>
 
-                <div className="pf-inv-visual-slot" />
+                <div className="pf-inv-visual-slot">
+                    <SlideShow images={investmentSlides} />
+                </div>
             </div>
         </section>
     )

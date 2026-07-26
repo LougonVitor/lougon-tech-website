@@ -1,0 +1,135 @@
+.pf-slideshow {
+    position: relative;
+    height: 100%;
+    min-height: 0;
+    overflow: hidden;
+    border-radius: 18px;
+}
+
+/* Absoluto para que a altura venha sempre do slot — os slides nunca
+   realimentam a medição feita no componente. */
+.pf-slideshow-track {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: transform 0.65s cubic-bezier(0.65, 0, 0.35, 1);
+    will-change: transform;
+}
+
+.pf-slideshow-slide {
+    position: relative;
+    flex: 0 0 auto;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1.5px solid var(--pf-border);
+    background: #0a0a12;
+    opacity: 0.45;
+    transition: opacity 0.5s ease;
+}
+
+.pf-slideshow-slide[aria-hidden='false'] {
+    opacity: 1;
+}
+
+.pf-slideshow-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+    user-select: none;
+    pointer-events: none;
+}
+
+.pf-slideshow-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 1.5px solid var(--pf-border);
+    background: rgba(10, 10, 18, 0.8);
+    backdrop-filter: blur(6px);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.pf-slideshow-arrow:hover {
+    background: rgba(167, 139, 250, 0.25);
+    border-color: var(--pf-purple-light, #a78bfa);
+}
+
+.pf-slideshow-arrow-prev {
+    left: 8px;
+}
+
+.pf-slideshow-arrow-next {
+    right: 8px;
+}
+
+.pf-slideshow-dots {
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    z-index: 2;
+    padding: 7px 12px;
+    border-radius: 99px;
+    background: rgba(10, 10, 18, 0.75);
+    backdrop-filter: blur(6px);
+    border: 1px solid var(--pf-border);
+}
+
+.pf-slideshow-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 999px;
+    border: none;
+    padding: 0;
+    background: rgba(255, 255, 255, 0.32);
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.pf-slideshow-dot.is-active {
+    background: var(--pf-purple-light, #a78bfa);
+    transform: scale(1.3);
+}
+
+@media (max-width: 980px) {
+    .pf-slideshow-track {
+        gap: 14px;
+    }
+}
+
+@media (max-width: 640px) {
+    .pf-slideshow-arrow {
+        width: 32px;
+        height: 32px;
+    }
+
+    .pf-slideshow-arrow-prev {
+        left: 4px;
+    }
+
+    .pf-slideshow-arrow-next {
+        right: 4px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .pf-slideshow-track {
+        transition: none;
+    }
+}

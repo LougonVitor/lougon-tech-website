@@ -46,6 +46,47 @@ body {
     color: #fff;
 }
 
+/* Barra de rolagem da página. As propriedades padrão valem em Chrome 121+,
+   Firefox e Safari 18.2+ — e nesses navegadores elas anulam os estilos
+   ::-webkit-scrollbar, por isso o bloco WebKit fica só como fallback. */
+html {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(178, 103, 255, 0.5) transparent;
+}
+
+@supports not (scrollbar-width: thin) {
+    ::-webkit-scrollbar {
+        width: 11px;
+        height: 11px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: linear-gradient(180deg, rgba(124, 155, 255, 0.55), rgba(178, 103, 255, 0.55));
+        /* A borda transparente afina o polegar e o descola das bordas. */
+        border: 3px solid transparent;
+        background-clip: padding-box;
+        border-radius: 99px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(180deg, rgba(124, 155, 255, 0.9), rgba(178, 103, 255, 0.9));
+        background-clip: padding-box;
+    }
+
+    ::-webkit-scrollbar-thumb:active {
+        background: linear-gradient(180deg, #7c9bff, #b267ff);
+        background-clip: padding-box;
+    }
+
+    ::-webkit-scrollbar-corner {
+        background: transparent;
+    }
+}
+
 a {
     color: inherit;
 }
