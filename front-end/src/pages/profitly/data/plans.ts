@@ -17,6 +17,8 @@ export interface PlanFeatureGroup {
     features: PlanFeature[]
 }
 
+export type PlanCtaAction = 'leadForm' | 'quiz'
+
 export interface Plan {
     id: string
     name: string
@@ -27,11 +29,8 @@ export interface Plan {
     featured?: boolean
     groups: PlanFeatureGroup[]
     ctaLabel: string
-    ctaHref?: string
-    ctaWhatsApp?: boolean
+    ctaAction: PlanCtaAction
 }
-
-const FOUNDER_MAILTO = 'mailto:tech@lougon.tech?subject=Quero%20ser%20fundador%20da%20Profitly'
 
 export const PLANS: Plan[] = [
     {
@@ -58,11 +57,12 @@ export const PLANS: Plan[] = [
                     { text: 'Dividendos' },
                     { text: 'Cotação' },
                     { text: 'Vários indicadores fundamentalistas' },
+                    { text: 'Notícias do mercado de ações e dos seus ativos', soon: true },
                 ],
             },
         ],
         ctaLabel: 'Avise-me no lançamento',
-        ctaWhatsApp: true,
+        ctaAction: 'leadForm',
     },
     {
         id: 'founder',
@@ -99,6 +99,7 @@ export const PLANS: Plan[] = [
                     { text: 'Dividendos' },
                     { text: 'Cotação' },
                     { text: 'Vários indicadores fundamentalistas' },
+                    { text: 'Notícias do mercado de ações e dos seus ativos', soon: true },
                 ],
             },
             {
@@ -109,7 +110,7 @@ export const PLANS: Plan[] = [
                     { text: 'Análise de gastos e rendas por meio de IA' },
                     { text: 'Relatório mensal da sua saúde financeira' },
                     { text: 'Insights de melhoria' },
-                    { text: 'Indicação de cursos para o seu perfil de gasto' },
+                    { text: 'Indicação de cursos para o seu perfil de gasto', soon: true },
                 ],
             },
             {
@@ -124,6 +125,6 @@ export const PLANS: Plan[] = [
             },
         ],
         ctaLabel: 'Quero uma das 50 vagas',
-        ctaHref: FOUNDER_MAILTO,
+        ctaAction: 'quiz',
     },
 ]

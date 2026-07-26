@@ -1,4 +1,3 @@
-import { EarlyAccessCTA } from '../../../components/earlyAccess/EarlyAccessCTA'
 import { Icon } from '../components/icons'
 import { SECTION_IDS } from '../data/constants'
 import './AdvancedAnalysisSection.css'
@@ -67,11 +66,6 @@ export function AdvancedAnalysisSection() {
                 <Icon name="layers" size={15} />
                 Alimentada pelos dados automáticos da integração com a B3 e corretoras, sem precisar de importação manual.
             </div>
-
-            <EarlyAccessCTA
-                compact
-                note="Grupo no WhatsApp · ajude a decidir quais ferramentas entram primeiro"
-            />
         </section>
     )
 }

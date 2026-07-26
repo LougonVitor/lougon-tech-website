@@ -74,8 +74,6 @@ interface TranslationDict {
         copy: string;
     };
     earlyAccess: {
-        button: string;
-        note: string;
         fab: string;
     };
 }
@@ -155,8 +153,6 @@ export const translations: Record<Language, TranslationDict> = {
             copy: '© 2026 Lougon.tech · All rights reserved',
         },
         earlyAccess: {
-            button: 'Get early access at the lowest price',
-            note: 'Join our WhatsApp group · founder pricing and limited spots',
             fab: 'Early access on WhatsApp',
         },
     },
@@ -234,8 +230,6 @@ export const translations: Record<Language, TranslationDict> = {
             copy: '© 2026 Lougon.tech · Todos os direitos reservados',
         },
         earlyAccess: {
-            button: 'Tenha acesso antecipado e barato',
-            note: 'Entre no grupo do WhatsApp · preço de fundador e vagas limitadas',
             fab: 'Acesso antecipado no WhatsApp',
         },
     },

@@ -1,4 +1,3 @@
-import { EarlyAccessCTA } from '../../../components/earlyAccess/EarlyAccessCTA'
 import { Icon } from '../components/icons'
 import { SECTION_IDS } from '../data/constants'
 import './HeroSection.css'
@@ -84,11 +83,6 @@ export function HeroSection() {
                             </div>
                         </div>
                     </div>
-
-                    <EarlyAccessCTA
-                        compact
-                        note="Entre no grupo do WhatsApp · preço de fundador e vagas limitadas"
-                    />
 
                     <div className="pf-hero-rating">
                         <span className="pf-hero-stars">★★★★★</span>

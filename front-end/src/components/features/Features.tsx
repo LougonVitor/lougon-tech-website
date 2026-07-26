@@ -1,6 +1,5 @@
 import './Features.css'
 import { useLanguage } from '../../i18n/LanguageContext'
-import { EarlyAccessCTA } from '../earlyAccess/EarlyAccessCTA'
 
 export function Features() {
     const { t } = useLanguage();
@@ -37,8 +36,6 @@ export function Features() {
                     <p className="feat-desc">{t.features.evolvingDesc}</p>
                 </div>
             </div>
-
-            <EarlyAccessCTA align="center" label={t.earlyAccess.button} note={t.earlyAccess.note} />
         </div>
     </section>
     </>

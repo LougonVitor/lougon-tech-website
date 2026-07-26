@@ -1,0 +1,73 @@
+.pf-lead-title {
+    font-family: 'Sora', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    margin: 0 0 8px;
+}
+
+.pf-lead-sub {
+    font-size: 13.5px;
+    color: var(--pf-text-muted);
+    line-height: 1.55;
+    margin: 0 0 22px;
+}
+
+.pf-lead-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.pf-lead-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 12.5px;
+    color: var(--pf-text-muted);
+}
+
+.pf-lead-field input {
+    background: var(--pf-bg-alt);
+    border: 1px solid var(--pf-border);
+    border-radius: 10px;
+    padding: 11px 14px;
+    font-size: 14px;
+    color: var(--pf-text);
+    font-family: inherit;
+}
+
+.pf-lead-field input:focus {
+    outline: none;
+    border-color: var(--pf-purple-light);
+}
+
+.pf-lead-submit {
+    margin-top: 8px;
+    justify-content: center;
+}
+
+.pf-lead-submit:disabled {
+    opacity: 0.6;
+    cursor: default;
+}
+
+.pf-lead-success {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 12px 0 4px;
+}
+
+.pf-lead-success-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: rgba(52, 212, 154, 0.14);
+    color: var(--pf-teal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+}

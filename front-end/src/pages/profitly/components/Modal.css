@@ -1,0 +1,53 @@
+.pf-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(6, 7, 12, 0.72);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    z-index: 1000;
+}
+
+.pf-modal {
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+    max-height: 88vh;
+    overflow-y: auto;
+    background: var(--pf-card);
+    border: 1px solid var(--pf-border);
+    border-radius: 20px;
+    padding: 32px 28px;
+    color: var(--pf-text);
+    text-align: left;
+}
+
+.pf-modal-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+    border: 1px solid var(--pf-border);
+    background: var(--pf-bg-alt);
+    color: var(--pf-text-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: color 0.2s, border-color 0.2s;
+}
+
+.pf-modal-close:hover {
+    color: var(--pf-text);
+    border-color: var(--pf-purple-light);
+}
+
+@media (max-width: 560px) {
+    .pf-modal {
+        padding: 26px 20px;
+    }
+}

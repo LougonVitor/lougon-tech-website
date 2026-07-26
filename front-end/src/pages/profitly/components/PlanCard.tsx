@@ -1,6 +1,8 @@
-import { WHATSAPP_GROUP_URL } from '../../../config/links'
+import { useState } from 'react'
 import type { Plan } from '../data/plans'
 import { Icon } from './icons'
+import { LeadFormModal } from './LeadFormModal'
+import { FounderQuizModal } from './FounderQuizModal'
 import './PlanCard.css'
 
 interface PlanCardProps {
@@ -8,8 +10,7 @@ interface PlanCardProps {
 }
 
 export function PlanCard({ plan }: PlanCardProps) {
-    const href = plan.ctaWhatsApp ? WHATSAPP_GROUP_URL : plan.ctaHref
-    const external = Boolean(plan.ctaWhatsApp)
+    const [modalOpen, setModalOpen] = useState(false)
 
     return (
         <div className={`pf-plan ${plan.featured ? 'pf-plan-featured' : ''}`}>
@@ -56,13 +57,19 @@ export function PlanCard({ plan }: PlanCardProps) {
                 ))}
             </div>
 
-            <a
+            <button
                 className={plan.featured ? 'pf-btn-primary pf-plan-cta' : 'pf-btn-outline pf-plan-cta'}
-                href={href}
-                {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                onClick={() => setModalOpen(true)}
             >
                 {plan.ctaLabel} <Icon name="arrowRight" size={15} />
-            </a>
+            </button>
+
+            {modalOpen && plan.ctaAction === 'leadForm' && (
+                <LeadFormModal onClose={() => setModalOpen(false)} />
+            )}
+            {modalOpen && plan.ctaAction === 'quiz' && (
+                <FounderQuizModal onClose={() => setModalOpen(false)} />
+            )}
         </div>
     )
 }
