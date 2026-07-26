@@ -15,12 +15,18 @@
     min-height: 0;
 }
 
-/* Poucos cards, em coluna única e compactos: a seção respira sem rolagem. */
+/* Duas colunas para aproveitar a largura e encurtar a lista na vertical. */
 .pf-inv-list {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 10px;
     min-height: 0;
+}
+
+/* Número ímpar de cards: o último ocupa a linha inteira em vez de deixar
+   uma célula vazia ao lado. */
+.pf-inv-list > .pf-feature:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
 }
 
 .pf-inv-cta {
@@ -83,6 +89,11 @@
 }
 
 @media (max-width: 640px) {
+    /* Estreito demais para duas colunas: os cards voltam a empilhar. */
+    .pf-inv-list {
+        grid-template-columns: 1fr;
+    }
+
     .pf-inv-visual-slot {
         height: min(60vh, 96vw);
     }

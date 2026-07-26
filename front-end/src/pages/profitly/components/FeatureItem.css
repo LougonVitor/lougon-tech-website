@@ -15,7 +15,7 @@
 .pf-feature:hover {
     border-color: rgba(167, 139, 250, 0.4);
     background: linear-gradient(150deg, rgba(167, 139, 250, 0.13), rgba(27, 31, 46, 0.7) 60%);
-    transform: translateX(3px);
+    transform: translateY(-2px);
 }
 
 .pf-feature-icon {
