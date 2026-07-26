@@ -37,7 +37,7 @@ const IDEAS = [
 
 export function AdvancedAnalysisSection() {
     return (
-        <section id={SECTION_IDS.analysis} className="pf-section pf-section-alt">
+        <section id={SECTION_IDS.analysis} className="pf-section pf-section-alt pf-analysis">
             <div className="pf-eyebrow">
                 <Icon name="scan" size={14} /> Trilha de análise avançada de ações
             </div>

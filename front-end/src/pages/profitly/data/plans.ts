@@ -58,6 +58,8 @@ export const PLANS: Plan[] = [
                     { text: 'Cotação' },
                     { text: 'Vários indicadores fundamentalistas' },
                     { text: 'Notícias do mercado de ações e dos seus ativos', soon: true },
+                    { text: 'Comparador de ativos' },
+                    { text: 'Acesso ao mercado global de ações', soon: true },
                 ],
             },
         ],
@@ -100,6 +102,8 @@ export const PLANS: Plan[] = [
                     { text: 'Cotação' },
                     { text: 'Vários indicadores fundamentalistas' },
                     { text: 'Notícias do mercado de ações e dos seus ativos', soon: true },
+                    { text: 'Comparador de ativos' },
+                    { text: 'Acesso ao mercado global de ações', soon: true },
                 ],
             },
             {

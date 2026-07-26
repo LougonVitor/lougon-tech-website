@@ -27,15 +27,13 @@
 
 /* Listas com rolagem interna: barra mais discreta que a da página, e que só
    ganha contraste quando o cursor está sobre a área. */
-.pf-inv-list,
-.pf-analysis-grid {
+.pf-inv-list {
     scrollbar-width: thin;
     scrollbar-color: rgba(167, 139, 250, 0.28) transparent;
     transition: scrollbar-color 0.25s ease;
 }
 
-.pf-inv-list:hover,
-.pf-analysis-grid:hover {
+.pf-inv-list:hover {
     scrollbar-color: rgba(167, 139, 250, 0.6) transparent;
 }
 
