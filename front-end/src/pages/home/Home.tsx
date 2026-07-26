@@ -7,8 +7,12 @@ import { Features } from '../../components/features/Features';
 import { Contact } from '../../components/contact/Contact'
 import { Footer } from '../../components/footer/Footer';
 import { WhatsAppButton } from '../../components/whatsapp/WhatsAppButton';
+import { WhatsAppGroupFab } from '../../components/whatsapp/WhatsAppGroupFab';
+import { useLanguage } from '../../i18n/LanguageContext';
 
 export function Home() {
+    const { t } = useLanguage();
+
     return(
     <>
         <Header />
@@ -25,7 +29,9 @@ export function Home() {
 
         <Footer />
 
-        <WhatsAppButton />
+        <WhatsAppButton stacked />
+
+        <WhatsAppGroupFab label={t.earlyAccess.fab} />
     </>
     )
 }

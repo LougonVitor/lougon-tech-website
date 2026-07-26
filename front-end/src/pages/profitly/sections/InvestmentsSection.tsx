@@ -1,3 +1,4 @@
+import { EarlyAccessCTA } from '../../../components/earlyAccess/EarlyAccessCTA'
 import { FeatureItem } from '../components/FeatureItem'
 import { Icon } from '../components/icons'
 import { SlideShow } from '../components/SlideShow'
@@ -87,6 +88,11 @@ export function InvestmentsSection() {
                             description="Dados de carteira e investimentos trazidos automaticamente direto da sua corretora."
                         />
                     </div>
+
+                    <EarlyAccessCTA
+                        compact
+                        note="Grupo no WhatsApp · seja um dos primeiros a usar a carteira completa"
+                    />
                 </div>
 
                 <div className="pf-inv-visual-slot">

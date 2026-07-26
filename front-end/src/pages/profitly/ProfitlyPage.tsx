@@ -4,6 +4,7 @@ import { InvestmentsSection } from './sections/InvestmentsSection'
 import { FinanceSection } from './sections/FinanceSection'
 import { AdvancedAnalysisSection } from './sections/AdvancedAnalysisSection'
 import { FounderSection } from './sections/FounderSection'
+import { WhatsAppGroupFab } from '../../components/whatsapp/WhatsAppGroupFab'
 import { Icon } from './components/icons'
 import './ProfitlyPage.css'
 
@@ -20,6 +21,8 @@ export function ProfitlyPage() {
             <FinanceSection />
             <AdvancedAnalysisSection />
             <FounderSection />
+
+            <WhatsAppGroupFab label="Acesso antecipado no WhatsApp" />
         </div>
     )
 }

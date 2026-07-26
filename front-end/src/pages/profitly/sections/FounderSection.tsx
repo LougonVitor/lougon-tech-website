@@ -1,3 +1,4 @@
+import { EarlyAccessCTA } from '../../../components/earlyAccess/EarlyAccessCTA'
 import { Icon } from '../components/icons'
 import { useCountdown } from '../hooks/useCountdown'
 import { FOUNDER_PLAN_SPOTS, PROFITLY_LAUNCH_DATE, SECTION_IDS } from '../data/constants'
@@ -78,6 +79,11 @@ export function FounderSection() {
                 <a href={FOUNDER_CONTACT_MAILTO} className="pf-btn-primary">
                     Quero ser fundador da Profitly <Icon name="arrowRight" size={16} />
                 </a>
+                <EarlyAccessCTA
+                    align="center"
+                    note="Grupo no WhatsApp · as vagas de fundador são anunciadas primeiro lá"
+                />
+
                 <p className="pf-founder-spots">Apenas {FOUNDER_PLAN_SPOTS} vagas disponíveis para o Plano Fundador.</p>
             </div>
         </section>

@@ -1,5 +1,6 @@
 import './Hero.css'
 import { useLanguage } from '../../i18n/LanguageContext'
+import { EarlyAccessCTA } from '../earlyAccess/EarlyAccessCTA'
 
 export function Hero() {
     const { t } = useLanguage();
@@ -19,6 +20,8 @@ export function Hero() {
             <button className="btn-primary" onClick={() => document.getElementById('products')?.scrollIntoView({behavior:'smooth'})}>{t.hero.exploreProducts}</button>
             <button className="btn-outline" onClick={() => document.getElementById('contact')?.scrollIntoView({behavior:'smooth'})}>{t.hero.talkToUs}</button>
         </div>
+
+        <EarlyAccessCTA align="center" label={t.earlyAccess.button} note={t.earlyAccess.note} />
     </section>
     </>
     )

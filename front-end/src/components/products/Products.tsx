@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import './Products.css'
 import { useLanguage } from '../../i18n/LanguageContext'
+import { EarlyAccessCTA } from '../earlyAccess/EarlyAccessCTA'
 
 export function Products() {
     const { t } = useLanguage();
@@ -89,6 +90,8 @@ export function Products() {
         </div>
 
         </div>
+
+        <EarlyAccessCTA align="center" label={t.earlyAccess.button} note={t.earlyAccess.note} />
     </section>
     </>
     )

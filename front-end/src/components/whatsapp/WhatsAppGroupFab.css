@@ -1,0 +1,96 @@
+/* Widget fixo no canto inferior direito: leva para o grupo do WhatsApp de
+   acesso antecipado. Fechado é um círculo com a logo; no hover/foco abre e
+   revela o texto. */
+.wa-group-fab {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 1001;
+    display: inline-flex;
+    align-items: center;
+    height: 58px;
+    padding: 0 15px;
+    border-radius: 99px;
+    background: linear-gradient(135deg, #25d366 0%, #1aa851 100%);
+    color: #fff;
+    text-decoration: none;
+    box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+    transition: transform 0.2s, box-shadow 0.2s, padding 0.25s ease;
+}
+
+.wa-group-fab:hover,
+.wa-group-fab:focus-visible {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(37, 211, 102, 0.55);
+    padding-right: 20px;
+}
+
+.wa-group-fab-icon {
+    font-size: 28px;
+    line-height: 1;
+}
+
+.wa-group-fab-label {
+    max-width: 0;
+    opacity: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 14px;
+    font-weight: 600;
+    transition: max-width 0.25s ease, opacity 0.2s ease, margin-left 0.25s ease;
+}
+
+.wa-group-fab:hover .wa-group-fab-label,
+.wa-group-fab:focus-visible .wa-group-fab-label {
+    max-width: 260px;
+    opacity: 1;
+    margin-left: 10px;
+}
+
+.wa-group-fab-ring {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.55);
+    animation: wa-group-pulse 2.2s infinite;
+    pointer-events: none;
+}
+
+@keyframes wa-group-pulse {
+    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.55); }
+    70% { box-shadow: 0 0 0 16px rgba(37, 211, 102, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .wa-group-fab-ring {
+        animation: none;
+    }
+}
+
+/* Sem hover para abrir: no toque o rótulo só ocuparia espaço, então fica
+   apenas o círculo. */
+@media (max-width: 600px) {
+    .wa-group-fab {
+        bottom: 18px;
+        right: 18px;
+        height: 52px;
+        padding: 0 12px;
+    }
+
+    .wa-group-fab-icon {
+        font-size: 25px;
+    }
+
+    .wa-group-fab-ring {
+        width: 52px;
+        height: 52px;
+    }
+
+    .wa-group-fab-label {
+        display: none;
+    }
+}

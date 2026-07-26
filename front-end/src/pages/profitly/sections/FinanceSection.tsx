@@ -1,3 +1,4 @@
+import { EarlyAccessCTA } from '../../../components/earlyAccess/EarlyAccessCTA'
 import { FeatureItem } from '../components/FeatureItem'
 import { Icon } from '../components/icons'
 import { SlideShow } from '../components/SlideShow'
@@ -77,6 +78,11 @@ export function FinanceSection() {
                             description="Planejamento de metas com projeções ajustadas ao seu comportamento de gasto real."
                         />
                     </div>
+
+                    <EarlyAccessCTA
+                        compact
+                        note="Grupo no WhatsApp · organize suas finanças antes de todo mundo"
+                    />
                 </div>
 
                 <div className="pf-inv-visual-slot">

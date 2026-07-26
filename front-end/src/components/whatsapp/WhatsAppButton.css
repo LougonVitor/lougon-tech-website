@@ -17,6 +17,13 @@
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
+.whatsapp-fab-stacked {
+    bottom: 94px;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+}
+
 .whatsapp-fab:hover {
     transform: translateY(-3px) scale(1.05);
     box-shadow: 0 12px 30px rgba(37, 211, 102, 0.55);
@@ -44,5 +51,13 @@
         bottom: 18px;
         right: 18px;
         font-size: 25px;
+    }
+
+    .whatsapp-fab-stacked {
+        width: 44px;
+        height: 44px;
+        bottom: 80px;
+        right: 22px;
+        font-size: 21px;
     }
 }

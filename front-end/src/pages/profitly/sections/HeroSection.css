@@ -43,11 +43,17 @@
     font-size: clamp(32px, 4.4vw, 52px);
 }
 
+/* Espaçamentos enxutos entre a faixa gratuita, o CTA do grupo e as trilhas:
+   a coluna precisa caber inteira nos 100vh da seção. */
+.pf-hero .ea-cta {
+    margin-top: 14px;
+}
+
 .pf-hero-rating {
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-top: 28px;
+    margin-top: 18px;
     color: var(--pf-text-dim);
     font-size: 13px;
 }
@@ -149,7 +155,7 @@
     font-size: 20px;
     font-weight: 700;
     color: #fff;
-    margin-top: 32px;
+    margin-top: 24px;
     margin-bottom: 0;
 }
 
