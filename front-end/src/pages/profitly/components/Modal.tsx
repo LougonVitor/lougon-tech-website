@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import type { ReactNode } from 'react'
+import { createPortal } from 'react-dom'
 import './Modal.css'
 
 interface ModalProps {
@@ -20,7 +21,7 @@ export function Modal({ onClose, children }: ModalProps) {
         }
     }, [onClose])
 
-    return (
+    return createPortal(
         <div className="pf-modal-overlay" onClick={onClose}>
             <div className="pf-modal" onClick={(event) => event.stopPropagation()}>
                 <button className="pf-modal-close" onClick={onClose} aria-label="Fechar">
@@ -28,6 +29,7 @@ export function Modal({ onClose, children }: ModalProps) {
                 </button>
                 {children}
             </div>
-        </div>
+        </div>,
+        document.body,
     )
 }

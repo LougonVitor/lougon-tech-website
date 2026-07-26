@@ -27,8 +27,9 @@ export function FounderQuizModal({ onClose }: FounderQuizModalProps) {
                     </span>
                     <h3 className="pf-lead-title">Quase lá!</h3>
                     <p className="pf-lead-sub">
-                        Entre no grupo do WhatsApp para garantir sua vaga. Depois que você entrar, avaliamos seu
-                        perfil e liberamos o acesso ao Plano Fundador.
+                        Suas respostas foram salvas! Entre no grupo do WhatsApp para garantir sua vaga. Depois que
+                        você entrar, avaliamos seu perfil de acordo com o quiz e liberamos o acesso ao Plano
+                        Fundador.
                     </p>
                     <a
                         className="pf-btn-primary pf-quiz-cta"
