@@ -24,7 +24,7 @@ jobs:
 
       - name: Instalar dependências
         working-directory: front-end
-        run: npm ci
+        run: npm install
 
       - name: Gerar build
         working-directory: front-end
