@@ -1,4 +1,3 @@
-import { EarlyAccessCTA } from '../../../components/earlyAccess/EarlyAccessCTA'
 import { Icon } from '../components/icons'
 import { PlanCard } from '../components/PlanCard'
 import { useCountdown } from '../hooks/useCountdown'
@@ -76,6 +75,17 @@ export function FounderSection() {
                     ))}
                 </div>
 
+                <div className="pf-founder-perk pf-founder-perk-highlight">
+                    <span className="pf-founder-perk-icon">
+                        <Icon name="whatsapp" size={22} />
+                    </span>
+                    <span className="pf-founder-perk-text">
+                        <strong>WhatsApp exclusivo com os devs</strong>
+                        Fundadores entram no grupo direto com a equipe de desenvolvimento para sugerir
+                        funcionalidades e reportar bugs.
+                    </span>
+                </div>
+
                 <div className="pf-plans">
                     {PLANS.map((plan) => (
                         <PlanCard key={plan.id} plan={plan} />
@@ -88,11 +98,6 @@ export function FounderSection() {
                     preço de forma vitalícia, com todas as funcionalidades futuras liberadas — planos lançados
                     depois podem não incluir tudo isso.
                 </p>
-
-                <EarlyAccessCTA
-                    align="center"
-                    note="Grupo no WhatsApp · as vagas de fundador são anunciadas primeiro lá"
-                />
 
                 <p className="pf-founder-spots">Apenas {FOUNDER_PLAN_SPOTS} vagas disponíveis para o Plano Fundador.</p>
             </div>
