@@ -1,13 +1,19 @@
+/* Única seção que não é presa em 100vh: os cards de plano precisam de espaço. */
 .pf-founder {
     background:
         radial-gradient(circle at 20% 20%, rgba(143, 102, 238, 0.16), transparent 45%),
         var(--pf-bg);
     align-items: center;
     text-align: center;
+    height: auto;
+    min-height: 100vh;
+    overflow: visible;
+    padding-bottom: 96px;
 }
 
 .pf-founder-content {
-    max-width: 760px;
+    max-width: 1120px;
+    width: 100%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -66,7 +72,8 @@
     grid-template-columns: repeat(4, 1fr);
     gap: 16px;
     width: 100%;
-    margin-bottom: 32px;
+    max-width: 860px;
+    margin-bottom: 44px;
 }
 
 .pf-founder-perk {
@@ -97,10 +104,43 @@
     margin-bottom: 2px;
 }
 
+.pf-plans {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 24px;
+    width: 100%;
+    align-items: start;
+    text-align: left;
+}
+
+.pf-founder-fineprint {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 8px;
+    max-width: 780px;
+    margin: 32px auto 8px;
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--pf-text-dim);
+    text-align: left;
+}
+
+.pf-founder-fineprint .ti {
+    margin-top: 2px;
+    color: var(--pf-teal);
+}
+
 .pf-founder-spots {
     font-size: 13px;
     color: var(--pf-text-dim);
     margin-top: 14px;
+}
+
+@media (max-width: 980px) {
+    .pf-plans {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 720px) {

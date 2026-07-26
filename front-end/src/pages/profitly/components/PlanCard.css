@@ -1,0 +1,169 @@
+.pf-plan {
+    position: relative;
+    background: var(--pf-card);
+    border: 1px solid var(--pf-border);
+    border-radius: 20px;
+    padding: 28px 26px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    transition: border-color 0.2s, transform 0.2s;
+}
+
+.pf-plan:hover {
+    border-color: rgba(167, 139, 250, 0.4);
+    transform: translateY(-3px);
+}
+
+.pf-plan-featured {
+    border-color: rgba(143, 102, 238, 0.55);
+    background:
+        radial-gradient(circle at 85% 0%, rgba(143, 102, 238, 0.14), transparent 55%),
+        var(--pf-card);
+    box-shadow: 0 24px 60px -32px rgba(143, 102, 238, 0.7);
+}
+
+.pf-plan-badge {
+    position: absolute;
+    top: -13px;
+    left: 26px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+    padding: 5px 12px;
+    border-radius: 99px;
+    color: #1a1406;
+    background: var(--pf-amber);
+}
+
+.pf-plan-head {
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--pf-border);
+    margin-bottom: 20px;
+}
+
+.pf-plan-name {
+    font-family: 'Sora', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    margin: 0 0 8px;
+}
+
+.pf-plan-tagline {
+    font-size: 13.5px;
+    color: var(--pf-text-muted);
+    line-height: 1.55;
+    font-weight: 300;
+    margin: 0 0 18px;
+}
+
+.pf-plan-price {
+    font-family: 'Sora', sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.1;
+}
+
+.pf-plan-featured .pf-plan-price {
+    color: var(--pf-purple-light);
+}
+
+.pf-plan-price-note {
+    font-size: 12px;
+    color: var(--pf-text-dim);
+    margin-top: 6px;
+}
+
+.pf-plan-groups {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 1;
+}
+
+.pf-plan-group-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+    color: var(--pf-purple-light);
+    margin-bottom: 12px;
+}
+
+.pf-plan-features {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.pf-plan-feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.pf-plan-feature-mark {
+    flex: 0 0 auto;
+    width: 18px;
+    height: 18px;
+    margin-top: 1px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(52, 212, 154, 0.14);
+    color: var(--pf-teal);
+}
+
+.pf-plan-feature-mark-soon {
+    background: rgba(167, 139, 250, 0.14);
+    color: var(--pf-purple-light);
+}
+
+.pf-plan-feature-text {
+    font-size: 13.5px;
+    color: var(--pf-text-muted);
+    line-height: 1.5;
+    font-weight: 300;
+}
+
+.pf-plan-feature-pill {
+    margin-left: 8px;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.pf-plan-feature-highlight {
+    background: rgba(52, 212, 154, 0.08);
+    border: 1px solid rgba(52, 212, 154, 0.28);
+    border-radius: 12px;
+    padding: 12px;
+}
+
+.pf-plan-feature-highlight .pf-plan-feature-text {
+    color: var(--pf-text);
+    font-weight: 400;
+}
+
+.pf-plan-cta {
+    margin-top: 26px;
+    justify-content: center;
+    text-decoration: none;
+}
+
+@media (max-width: 720px) {
+    .pf-plan {
+        padding: 26px 20px;
+    }
+}

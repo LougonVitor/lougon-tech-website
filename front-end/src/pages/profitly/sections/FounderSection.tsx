@@ -1,10 +1,10 @@
 import { EarlyAccessCTA } from '../../../components/earlyAccess/EarlyAccessCTA'
 import { Icon } from '../components/icons'
+import { PlanCard } from '../components/PlanCard'
 import { useCountdown } from '../hooks/useCountdown'
 import { FOUNDER_PLAN_SPOTS, PROFITLY_LAUNCH_DATE, SECTION_IDS } from '../data/constants'
+import { PLANS } from '../data/plans'
 import './FounderSection.css'
-
-const FOUNDER_CONTACT_MAILTO = 'mailto:tech@lougon.tech?subject=Quero%20ser%20fundador%20da%20Profitly'
 
 function pad(value: number) {
     return value.toString().padStart(2, '0')
@@ -76,9 +76,19 @@ export function FounderSection() {
                     ))}
                 </div>
 
-                <a href={FOUNDER_CONTACT_MAILTO} className="pf-btn-primary">
-                    Quero ser fundador da Profitly <Icon name="arrowRight" size={16} />
-                </a>
+                <div className="pf-plans">
+                    {PLANS.map((plan) => (
+                        <PlanCard key={plan.id} plan={plan} />
+                    ))}
+                </div>
+
+                <p className="pf-founder-fineprint">
+                    <Icon name="shield" size={15} />
+                    Quem entrar no Plano Fundador ajuda a bancar o desenvolvimento da plataforma e mantém o mesmo
+                    preço de forma vitalícia, com todas as funcionalidades futuras liberadas — planos lançados
+                    depois podem não incluir tudo isso.
+                </p>
+
                 <EarlyAccessCTA
                     align="center"
                     note="Grupo no WhatsApp · as vagas de fundador são anunciadas primeiro lá"

@@ -1,0 +1,129 @@
+import type { Icon } from '../components/icons'
+import { FOUNDER_PLAN_SPOTS } from './constants'
+
+type IconName = Parameters<typeof Icon>[0]['name']
+
+export interface PlanFeature {
+    text: string
+    /* Funcionalidade prometida ao plano, mas que ainda não está no ar. */
+    soon?: boolean
+    /* Destaque visual para o diferencial mais importante do plano. */
+    highlight?: boolean
+}
+
+export interface PlanFeatureGroup {
+    icon: IconName
+    title: string
+    features: PlanFeature[]
+}
+
+export interface Plan {
+    id: string
+    name: string
+    tagline: string
+    priceLabel: string
+    priceNote: string
+    badge?: string
+    featured?: boolean
+    groups: PlanFeatureGroup[]
+    ctaLabel: string
+    ctaHref?: string
+    ctaWhatsApp?: boolean
+}
+
+const FOUNDER_MAILTO = 'mailto:tech@lougon.tech?subject=Quero%20ser%20fundador%20da%20Profitly'
+
+export const PLANS: Plan[] = [
+    {
+        id: 'free',
+        name: 'Plano Grátis',
+        tagline: 'O essencial para acompanhar a sua carteira e analisar ações da B3.',
+        priceLabel: 'R$ 0',
+        priceNote: 'Para sempre, sem cartão de crédito',
+        groups: [
+            {
+                icon: 'wallet',
+                title: 'Carteira de investimentos',
+                features: [
+                    { text: 'Adicione ativos manualmente' },
+                    { text: 'Adicione ativos importando pelo extrato da B3' },
+                    { text: 'Analise a evolução do seu patrimônio, renda e proventos' },
+                ],
+            },
+            {
+                icon: 'chart',
+                title: 'Tela de análise de ações',
+                features: [
+                    { text: 'Preço teto por Graham' },
+                    { text: 'Dividendos' },
+                    { text: 'Cotação' },
+                    { text: 'Vários indicadores fundamentalistas' },
+                ],
+            },
+        ],
+        ctaLabel: 'Avise-me no lançamento',
+        ctaWhatsApp: true,
+    },
+    {
+        id: 'founder',
+        name: 'Plano Fundador',
+        tagline:
+            'Muito mais barato que o plano comum, vitalício no mesmo preço e com todas as funcionalidades futuras inclusas — inclusive as que outros planos não vão ter.',
+        priceLabel: 'Preço de fundador',
+        priceNote: `Anunciado em 05/09/2026 · ${FOUNDER_PLAN_SPOTS} vagas`,
+        badge: `${FOUNDER_PLAN_SPOTS} vagas · vitalício`,
+        featured: true,
+        groups: [
+            {
+                icon: 'wallet',
+                title: 'Carteira de investimentos',
+                features: [
+                    { text: 'Adicione ativos manualmente' },
+                    { text: 'Adicione ativos importando pelo extrato da B3' },
+                    { text: 'Integração automática com a B3', soon: true },
+                    { text: 'Integração automática com corretoras', soon: true },
+                    { text: 'Declaração de IRPF', soon: true },
+                    { text: 'Análise avançada de ações' },
+                    { text: 'Analise a evolução do seu patrimônio, renda e proventos' },
+                ],
+            },
+            {
+                icon: 'chart',
+                title: 'Tela de análise de ações',
+                features: [
+                    { text: 'Análise semanal por IA de como está cada ativo da sua carteira', soon: true },
+                    { text: 'Notícias no seu WhatsApp dos ativos que você escolher', soon: true },
+                    { text: 'Preço teto por Graham' },
+                    { text: 'Três diferentes cálculos de preço teto' },
+                    { text: 'Análise da sua carteira por meio de IA', soon: true },
+                    { text: 'Dividendos' },
+                    { text: 'Cotação' },
+                    { text: 'Vários indicadores fundamentalistas' },
+                ],
+            },
+            {
+                icon: 'coins',
+                title: 'Finanças pessoais',
+                features: [
+                    { text: 'Área completa de finanças pessoais' },
+                    { text: 'Análise de gastos e rendas por meio de IA' },
+                    { text: 'Relatório mensal da sua saúde financeira' },
+                    { text: 'Insights de melhoria' },
+                    { text: 'Indicação de cursos para o seu perfil de gasto' },
+                ],
+            },
+            {
+                icon: 'whatsapp',
+                title: 'Canal direto com quem desenvolve',
+                features: [
+                    {
+                        text: 'Acesso ao WhatsApp exclusivo dos desenvolvedores para sugerir melhorias e reportar bugs',
+                        highlight: true,
+                    },
+                ],
+            },
+        ],
+        ctaLabel: 'Quero uma das 50 vagas',
+        ctaHref: FOUNDER_MAILTO,
+    },
+]
