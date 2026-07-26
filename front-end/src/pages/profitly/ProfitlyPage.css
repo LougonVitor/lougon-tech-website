@@ -27,28 +27,15 @@
 
 /* Listas com rolagem interna: barra mais discreta que a da página, e que só
    ganha contraste quando o cursor está sobre a área. */
-.pf-inv-list {
-    scrollbar-width: thin;
-    scrollbar-color: rgba(167, 139, 250, 0.28) transparent;
-    transition: scrollbar-color 0.25s ease;
-}
-
-.pf-inv-list:hover {
-    scrollbar-color: rgba(167, 139, 250, 0.6) transparent;
-}
-
 @supports not (scrollbar-width: thin) {
-    .pf-inv-list::-webkit-scrollbar,
     .pf-analysis-grid::-webkit-scrollbar {
         width: 8px;
     }
 
-    .pf-inv-list::-webkit-scrollbar-track,
     .pf-analysis-grid::-webkit-scrollbar-track {
         background: transparent;
     }
 
-    .pf-inv-list::-webkit-scrollbar-thumb,
     .pf-analysis-grid::-webkit-scrollbar-thumb {
         background: rgba(167, 139, 250, 0.28);
         border: 2px solid transparent;
@@ -57,13 +44,11 @@
         transition: background 0.25s ease;
     }
 
-    .pf-inv-list:hover::-webkit-scrollbar-thumb,
     .pf-analysis-grid:hover::-webkit-scrollbar-thumb {
         background: rgba(167, 139, 250, 0.6);
         background-clip: padding-box;
     }
 
-    .pf-inv-list::-webkit-scrollbar-thumb:hover,
     .pf-analysis-grid::-webkit-scrollbar-thumb:hover {
         background: var(--pf-purple-light);
         background-clip: padding-box;

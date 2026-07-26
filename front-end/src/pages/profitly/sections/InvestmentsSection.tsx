@@ -32,29 +32,9 @@ export function InvestmentsSection() {
                     </p>
                     <div className="pf-inv-list">
                         <FeatureItem
-                            icon="layers"
-                            title="Carteira unificada"
-                            description="Ações, FIIs, fundos (fiagro, FI-Infra, FIDC, FIP), Tesouro Direto e cripto em um só painel."
-                        />
-                        <FeatureItem
-                            icon="receipt"
-                            title="Importação de extratos B3"
-                            description="Importe o extrato da B3 quantas vezes quiser: reimportações não duplicam lançamentos."
-                        />
-                        <FeatureItem
-                            icon="trendingUp"
-                            title="Preço médio e lucro realizado"
-                            description="Compras e vendas calculam preço médio automaticamente e mostram o lucro já realizado."
-                        />
-                        <FeatureItem
-                            icon="chart"
-                            title="Evolução do patrimônio"
-                            description="Compare o quanto você aportou com o valor de mercado da carteira, mês a mês."
-                        />
-                        <FeatureItem
-                            icon="coins"
-                            title="Histórico de proventos"
-                            description="Dividendos e JCP de ações, FIIs e fundos organizados automaticamente por data."
+                            icon="globe"
+                            title="Carteira unificada, com ativos globais"
+                            description="Ações, FIIs, fundos, Tesouro Direto, cripto e ativos internacionais em um só painel."
                         />
                         <FeatureItem
                             icon="scan"
@@ -63,30 +43,24 @@ export function InvestmentsSection() {
                         />
                         <FeatureItem
                             icon="brain"
-                            title="Análise inteligente da carteira com IA"
-                            description="A IA analisa sua carteira e aponta possíveis pontos de melhoria e riscos de concentração."
-                        />
-                        <FeatureItem
-                            icon="calendar"
-                            title="Relatório diário e semanal de desempenho"
-                            description="Um resumo automático de como seus ativos performaram, direto para você."
-                        />
-                        <FeatureItem
-                            icon="sparkles"
-                            title="Assessor de investimentos por IA"
-                            description="Uma IA que analisa sua carteira continuamente e fornece insights personalizados."
-                        />
-                        <FeatureItem
-                            icon="scan"
-                            title="Integração automática com a B3"
-                            description="Sincronização direta com a B3, sem precisar importar extrato manualmente."
+                            title="Assessor de investimentos com IA"
+                            description="A IA analisa sua carteira continuamente, aponta riscos de concentração e fornece insights personalizados."
                         />
                         <FeatureItem
                             icon="layers"
-                            title="Integração direta com corretoras"
-                            description="Dados de carteira e investimentos trazidos automaticamente direto da sua corretora."
+                            title="Integração automática com B3 e corretoras"
+                            description="Sincronização direta com a B3 e sua corretora, sem precisar importar extrato manualmente."
+                        />
+                        <FeatureItem
+                            icon="palette"
+                            title="Visualização 100% personalizável"
+                            description="Monte os gráficos e análises da carteira do seu jeito, do jeito que facilita a sua leitura."
                         />
                     </div>
+                    <a href={`#${SECTION_IDS.founder}`} className="pf-inv-cta">
+                        Saiba tudo o que a Profitly pode te oferecer
+                        <Icon name="arrowRight" size={15} />
+                    </a>
                 </div>
 
                 <div className="pf-inv-visual-slot">

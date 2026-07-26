@@ -33,18 +33,8 @@ export function FinanceSection() {
                     <div className="pf-inv-list">
                         <FeatureItem
                             icon="receipt"
-                            title="Orçamento mensal completo"
-                            description="Salário, rendas avulsas e gastos categorizados, com status de pago, parcial e pendente."
-                        />
-                        <FeatureItem
-                            icon="calendar"
-                            title="Gastos e rendas recorrentes"
-                            description="Cadastre uma vez e o Profitly injeta automaticamente em todo período novo."
-                        />
-                        <FeatureItem
-                            icon="bell"
-                            title="Limites de gasto por categoria"
-                            description="Alertas visuais quando você chega a 80% e ultrapassa 100% do limite definido."
+                            title="Orçamento mensal com limites de gasto"
+                            description="Salário, rendas e gastos categorizados, com alertas visuais ao chegar a 80% e ultrapassar 100% do limite."
                         />
                         <FeatureItem
                             icon="chart"
@@ -57,26 +47,20 @@ export function FinanceSection() {
                             description="A linha 'Investimento' do orçamento pode puxar automaticamente da sua carteira."
                         />
                         <FeatureItem
-                            icon="layers"
-                            title="Exportação e importação em CSV"
-                            description="Exporte seu histórico ou importe gastos em lote, com até 12 meses de retenção."
-                        />
-                        <FeatureItem
                             icon="brain"
                             title="Análise dos gastos com IA"
                             description="A IA identifica padrões, anomalias e oportunidades de economia no seu orçamento."
                         />
                         <FeatureItem
-                            icon="target"
-                            title="Direcionamentos personalizados"
-                            description="Conteúdos e cursos recomendados de acordo com o seu padrão de controle financeiro."
-                        />
-                        <FeatureItem
-                            icon="sparkles"
-                            title="Metas financeiras inteligentes"
-                            description="Planejamento de metas com projeções ajustadas ao seu comportamento de gasto real."
+                            icon="palette"
+                            title="Visualização 100% personalizável"
+                            description="Monte os gráficos e análises das suas finanças do seu jeito, do jeito que facilita a sua leitura."
                         />
                     </div>
+                    <a href={`#${SECTION_IDS.founder}`} className="pf-inv-cta">
+                        Saiba tudo o que a Profitly pode te oferecer
+                        <Icon name="arrowRight" size={15} />
+                    </a>
                 </div>
 
                 <div className="pf-inv-visual-slot">

@@ -22,6 +22,7 @@ type IconName =
     | 'flask'
     | 'globe'
     | 'whatsapp'
+    | 'palette'
 
 const TABLER_CLASS: Record<IconName, string> = {
     wallet: 'ti-wallet',
@@ -45,6 +46,7 @@ const TABLER_CLASS: Record<IconName, string> = {
     flask: 'ti-flask',
     globe: 'ti-world',
     whatsapp: 'ti-brand-whatsapp',
+    palette: 'ti-palette',
 }
 
 interface IconProps {

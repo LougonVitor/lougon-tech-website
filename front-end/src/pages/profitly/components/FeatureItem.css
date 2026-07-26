@@ -2,23 +2,49 @@
     display: flex;
     gap: 14px;
     align-items: flex-start;
+    padding: 14px 16px;
+    background: linear-gradient(155deg, rgba(167, 139, 250, 0.07), rgba(22, 25, 38, 0.55) 55%);
+    border: 1px solid rgba(38, 42, 59, 0.9);
+    border-radius: 14px;
+    transition:
+        border-color 0.25s ease,
+        background 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.pf-feature:hover {
+    border-color: rgba(167, 139, 250, 0.45);
+    background: linear-gradient(155deg, rgba(167, 139, 250, 0.13), rgba(27, 31, 46, 0.75) 55%);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
 }
 
 .pf-feature-icon {
     flex-shrink: 0;
-    width: 38px;
-    height: 38px;
+    width: 40px;
+    height: 40px;
     border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
     background: rgba(167, 139, 250, 0.12);
     color: var(--pf-purple-light);
+    box-shadow: inset 0 0 0 1px rgba(167, 139, 250, 0.16);
+    transition: background 0.25s ease, box-shadow 0.25s ease;
+}
+
+.pf-feature:hover .pf-feature-icon {
+    background: rgba(167, 139, 250, 0.22);
+    box-shadow:
+        inset 0 0 0 1px rgba(167, 139, 250, 0.35),
+        0 0 18px rgba(143, 102, 238, 0.25);
 }
 
 .pf-feature-icon-soon {
     background: rgba(255, 255, 255, 0.05);
     color: var(--pf-text-dim);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
 }
 
 .pf-feature-body {
@@ -29,12 +55,12 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    margin-bottom: 3px;
+    margin-bottom: 4px;
     flex-wrap: wrap;
 }
 
 .pf-feature-title {
-    font-size: 14.5px;
+    font-size: 15px;
     font-weight: 600;
     color: var(--pf-text);
 }
@@ -42,7 +68,7 @@
 .pf-feature-desc {
     font-size: 13.5px;
     color: var(--pf-text-muted);
-    line-height: 1.55;
+    line-height: 1.5;
     font-weight: 300;
     margin: 0;
 }

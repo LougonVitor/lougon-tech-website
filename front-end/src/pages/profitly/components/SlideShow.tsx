@@ -12,7 +12,7 @@ interface SlideShowProps {
 }
 
 /** Quanto da largura disponível a imagem ativa ocupa, deixando o "peek" da próxima à mostra. */
-const ACTIVE_WIDTH_RATIO = 0.86
+const ACTIVE_WIDTH_RATIO = 0.74
 
 export function SlideShow({ images }: SlideShowProps) {
     const [index, setIndex] = useState(0)
