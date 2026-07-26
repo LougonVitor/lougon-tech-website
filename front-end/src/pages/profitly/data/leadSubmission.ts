@@ -4,6 +4,7 @@ export interface LeadPayload {
     phone: string
     city?: string
     source?: string
+    plan: string
 }
 
 /*

@@ -29,7 +29,7 @@ export function FounderQuizModal({ onClose }: FounderQuizModalProps) {
     async function handleSubmit(event: FormEvent) {
         event.preventDefault()
         setSubmitting(true)
-        await submitLead({ name, email, phone, city, source: 'founder-quiz' })
+        await submitLead({ name, email, phone, city, source: 'founder-quiz', plan: 'Fundador' })
         setSubmitting(false)
         setSubmitted(true)
     }

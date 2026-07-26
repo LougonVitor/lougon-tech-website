@@ -19,7 +19,7 @@ export function LeadFormModal({ onClose }: LeadFormModalProps) {
     async function handleSubmit(event: FormEvent) {
         event.preventDefault()
         setSubmitting(true)
-        await submitLead({ name, email, phone })
+        await submitLead({ name, email, phone, source: 'leadForm', plan: 'Grátis' })
         setSubmitting(false)
         setSubmitted(true)
     }
