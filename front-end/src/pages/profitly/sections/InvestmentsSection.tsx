@@ -26,7 +26,7 @@ export function InvestmentsSection() {
 
             <div className="pf-inv-layout">
                 <div className="pf-inv-intro">
-                    <p className="pf-sub" style={{ marginBottom: 20 }}>
+                    <p className="pf-sub" style={{ marginBottom: 14 }}>
                         Ações, FIIs, fundos, Tesouro Direto e criptomoedas — tudo centralizado, com análises que hoje
                         só investidores avançados costumam ter acesso.
                     </p>
@@ -34,27 +34,27 @@ export function InvestmentsSection() {
                         <FeatureItem
                             icon="globe"
                             title="Carteira unificada, com ativos globais"
-                            description="Ações, FIIs, fundos, Tesouro Direto, cripto e ativos internacionais em um só painel."
+                            description="Ações, FIIs, fundos, Tesouro, cripto e ativos internacionais em um só painel."
                         />
                         <FeatureItem
                             icon="scan"
                             title="Análise avançada por ativo"
-                            description="30+ indicadores, preço justo (Graham, Bazin, Gordon), Magic Number de FIIs, Fear & Greed de cripto e mais."
+                            description="30+ indicadores, preço justo (Graham, Bazin, Gordon) e Magic Number de FIIs."
                         />
                         <FeatureItem
                             icon="brain"
                             title="Assessor de investimentos com IA"
-                            description="A IA analisa sua carteira continuamente, aponta riscos de concentração e fornece insights personalizados."
+                            description="A IA acompanha sua carteira, aponta riscos e sugere melhorias."
                         />
                         <FeatureItem
                             icon="layers"
                             title="Integração automática com B3 e corretoras"
-                            description="Sincronização direta com a B3 e sua corretora, sem precisar importar extrato manualmente."
+                            description="Sincronização direta, sem importar extrato manualmente."
                         />
                         <FeatureItem
                             icon="palette"
                             title="Visualização 100% personalizável"
-                            description="Monte os gráficos e análises da carteira do seu jeito, do jeito que facilita a sua leitura."
+                            description="Monte os gráficos do seu jeito de analisar."
                         />
                     </div>
                     <a href={`#${SECTION_IDS.founder}`} className="pf-inv-cta">

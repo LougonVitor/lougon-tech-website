@@ -1,44 +1,39 @@
 .pf-feature {
     display: flex;
-    gap: 14px;
+    gap: 11px;
     align-items: flex-start;
-    padding: 14px 16px;
-    background: linear-gradient(155deg, rgba(167, 139, 250, 0.07), rgba(22, 25, 38, 0.55) 55%);
-    border: 1px solid rgba(38, 42, 59, 0.9);
-    border-radius: 14px;
+    padding: 10px 13px;
+    background: linear-gradient(150deg, rgba(167, 139, 250, 0.07), rgba(22, 25, 38, 0.5) 60%);
+    border: 1px solid rgba(38, 42, 59, 0.85);
+    border-radius: 11px;
     transition:
-        border-color 0.25s ease,
-        background 0.25s ease,
-        transform 0.25s ease,
-        box-shadow 0.25s ease;
+        border-color 0.22s ease,
+        background 0.22s ease,
+        transform 0.22s ease;
 }
 
 .pf-feature:hover {
-    border-color: rgba(167, 139, 250, 0.45);
-    background: linear-gradient(155deg, rgba(167, 139, 250, 0.13), rgba(27, 31, 46, 0.75) 55%);
-    transform: translateY(-2px);
-    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+    border-color: rgba(167, 139, 250, 0.4);
+    background: linear-gradient(150deg, rgba(167, 139, 250, 0.13), rgba(27, 31, 46, 0.7) 60%);
+    transform: translateX(3px);
 }
 
 .pf-feature-icon {
     flex-shrink: 0;
-    width: 40px;
-    height: 40px;
-    border-radius: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(167, 139, 250, 0.12);
+    background: rgba(167, 139, 250, 0.13);
     color: var(--pf-purple-light);
     box-shadow: inset 0 0 0 1px rgba(167, 139, 250, 0.16);
-    transition: background 0.25s ease, box-shadow 0.25s ease;
+    transition: background 0.22s ease;
 }
 
 .pf-feature:hover .pf-feature-icon {
-    background: rgba(167, 139, 250, 0.22);
-    box-shadow:
-        inset 0 0 0 1px rgba(167, 139, 250, 0.35),
-        0 0 18px rgba(143, 102, 238, 0.25);
+    background: rgba(167, 139, 250, 0.24);
 }
 
 .pf-feature-icon-soon {
@@ -55,20 +50,20 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    margin-bottom: 4px;
     flex-wrap: wrap;
 }
 
 .pf-feature-title {
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 600;
     color: var(--pf-text);
+    line-height: 1.3;
 }
 
 .pf-feature-desc {
-    font-size: 13.5px;
+    font-size: 12.5px;
     color: var(--pf-text-muted);
-    line-height: 1.5;
+    line-height: 1.4;
     font-weight: 300;
-    margin: 0;
+    margin: 2px 0 0;
 }

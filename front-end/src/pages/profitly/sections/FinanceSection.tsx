@@ -26,7 +26,7 @@ export function FinanceSection() {
 
             <div className="pf-inv-layout">
                 <div className="pf-inv-intro">
-                    <p className="pf-sub" style={{ marginBottom: 20 }}>
+                    <p className="pf-sub" style={{ marginBottom: 14 }}>
                         Orçamento mensal, gastos recorrentes e alertas de limite — sem precisar de planilha, e já
                         conectado com a sua carteira de investimentos.
                     </p>
@@ -34,27 +34,27 @@ export function FinanceSection() {
                         <FeatureItem
                             icon="receipt"
                             title="Orçamento mensal com limites de gasto"
-                            description="Salário, rendas e gastos categorizados, com alertas visuais ao chegar a 80% e ultrapassar 100% do limite."
+                            description="Rendas e gastos categorizados, com alerta ao passar do limite."
                         />
                         <FeatureItem
                             icon="chart"
                             title="Comparação mês a mês"
-                            description="Veja a variação dos seus gastos e a precisão do que foi planejado contra o real."
+                            description="A variação dos seus gastos e o planejado contra o real."
                         />
                         <FeatureItem
                             icon="wallet"
                             title="Linha de investimento conectada"
-                            description="A linha 'Investimento' do orçamento pode puxar automaticamente da sua carteira."
+                            description="A linha 'Investimento' puxa automaticamente da sua carteira."
                         />
                         <FeatureItem
                             icon="brain"
                             title="Análise dos gastos com IA"
-                            description="A IA identifica padrões, anomalias e oportunidades de economia no seu orçamento."
+                            description="Padrões, anomalias e oportunidades de economia no orçamento."
                         />
                         <FeatureItem
                             icon="palette"
                             title="Visualização 100% personalizável"
-                            description="Monte os gráficos e análises das suas finanças do seu jeito, do jeito que facilita a sua leitura."
+                            description="Monte os gráficos do seu jeito de analisar."
                         />
                     </div>
                     <a href={`#${SECTION_IDS.founder}`} className="pf-inv-cta">

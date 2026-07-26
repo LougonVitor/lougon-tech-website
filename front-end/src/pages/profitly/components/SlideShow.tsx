@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { Icon } from './icons'
 import './SlideShow.css'
 
@@ -11,43 +11,56 @@ interface SlideShowProps {
     images: SlideShowImage[]
 }
 
-/** Quanto da largura disponível a imagem ativa ocupa, deixando o "peek" da próxima à mostra. */
-const ACTIVE_WIDTH_RATIO = 0.74
+/** Largura máxima do slide ativo dentro do slot — a sobra é o "peek" dos vizinhos. */
+const ACTIVE_WIDTH_RATIO = 0.7
+
+/** Usada até a imagem carregar e enquanto não há proporção medida. */
+const FALLBACK_ASPECT = 1.6
 
 export function SlideShow({ images }: SlideShowProps) {
     const [index, setIndex] = useState(0)
-    const [aspect, setAspect] = useState(0)
-    const [layout, setLayout] = useState({ containerWidth: 0, slideWidth: 0, slideHeight: 0, gap: 20 })
+    const [aspects, setAspects] = useState<number[]>([])
+    const [box, setBox] = useState({ width: 0, height: 0, gap: 20 })
     const rootRef = useRef<HTMLDivElement>(null)
 
     const goTo = (next: number) => {
         setIndex((next + images.length) % images.length)
     }
 
-    // A proporção da primeira imagem define a moldura, para que ela apareça
-    // inteira — sem corte e sem sobra — em qualquer tamanho de tela.
+    // Cada slide é medido individualmente: com uma moldura única, prints de
+    // formatos diferentes ganhavam faixas vazias em cima e embaixo.
     useEffect(() => {
-        const probe = new Image()
-        probe.onload = () => {
-            if (probe.naturalHeight > 0) setAspect(probe.naturalWidth / probe.naturalHeight)
+        let active = true
+
+        Promise.all(
+            images.map(
+                (image) =>
+                    new Promise<number>((resolve) => {
+                        const probe = new Image()
+                        probe.onload = () =>
+                            resolve(probe.naturalHeight > 0 ? probe.naturalWidth / probe.naturalHeight : FALLBACK_ASPECT)
+                        probe.onerror = () => resolve(FALLBACK_ASPECT)
+                        probe.src = image.src
+                    }),
+            ),
+        ).then((measured) => {
+            if (active) setAspects(measured)
+        })
+
+        return () => {
+            active = false
         }
-        probe.src = images[0].src
     }, [images])
 
     useEffect(() => {
         const root = rootRef.current
-        if (!root || !aspect) return
+        if (!root) return
 
         const measure = () => {
             const track = root.querySelector('.pf-slideshow-track')
             const gap = track ? parseFloat(getComputedStyle(track).columnGap || '20') || 20 : 20
 
-            const containerWidth = root.clientWidth
-            const containerHeight = root.clientHeight
-            // Limitada pela largura (mantendo o peek) e pela altura disponível.
-            const slideWidth = Math.min(containerWidth * ACTIVE_WIDTH_RATIO, containerHeight * aspect)
-
-            setLayout({ containerWidth, slideWidth, slideHeight: slideWidth / aspect, gap })
+            setBox({ width: root.clientWidth, height: root.clientHeight, gap })
         }
 
         measure()
@@ -61,11 +74,27 @@ export function SlideShow({ images }: SlideShowProps) {
             window.removeEventListener('resize', measure)
             window.removeEventListener('orientationchange', measure)
         }
-    }, [aspect])
+    }, [])
 
-    const { containerWidth, slideWidth, slideHeight, gap } = layout
-    // Centraliza o slide ativo: sobra simétrica revela o que vem antes e depois.
-    const offset = slideWidth ? index * (slideWidth + gap) - (containerWidth - slideWidth) / 2 : 0
+    // Cada slide fica limitado pela largura do slot (mantendo o peek) e pela
+    // altura disponível, preservando a proporção da própria imagem.
+    const sizes = useMemo(() => {
+        if (!box.width || !box.height || aspects.length !== images.length) return []
+
+        const maxWidth = box.width * ACTIVE_WIDTH_RATIO
+        return aspects.map((aspect) => {
+            const width = Math.min(maxWidth, box.height * aspect)
+            return { width, height: width / aspect }
+        })
+    }, [aspects, box, images.length])
+
+    // Centraliza o slide ativo: a sobra simétrica revela o anterior e o próximo.
+    const offset = useMemo(() => {
+        if (!sizes.length) return 0
+
+        const before = sizes.slice(0, index).reduce((total, size) => total + size.width + box.gap, 0)
+        return before - (box.width - sizes[index].width) / 2
+    }, [sizes, index, box])
 
     return (
         <div className="pf-slideshow" ref={rootRef}>
@@ -74,7 +103,7 @@ export function SlideShow({ images }: SlideShowProps) {
                     <div
                         className="pf-slideshow-slide"
                         key={image.src}
-                        style={slideWidth ? { width: slideWidth, height: slideHeight } : undefined}
+                        style={sizes[i] ? { width: sizes[i].width, height: sizes[i].height } : undefined}
                         aria-hidden={i !== index}
                     >
                         <img src={image.src} alt={image.alt} draggable={false} />
