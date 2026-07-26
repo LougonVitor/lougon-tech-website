@@ -49,3 +49,8 @@
     .statistic-box:nth-child(2n) { border-right: none; }
     .statistic-box:nth-last-child(-n+2) { border-bottom: none; }
 }
+
+@media (max-width: 360px) {
+    .statistic-box-num { font-size: 20px; }
+    .statistic-box-label { font-size: 11px; }
+}

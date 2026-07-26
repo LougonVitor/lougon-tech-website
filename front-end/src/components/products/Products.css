@@ -37,7 +37,9 @@
 
 .product-products {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    /* min(260px, 100%): em telas mais estreitas que 260px + paddings o card
+       encolhe junto em vez de estourar a largura da página. */
+    grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
     gap: 20px;
     margin-bottom: 16px;
 }
@@ -194,4 +196,10 @@
     border: 1px solid rgba(79, 124, 255, 0.3);
     padding: 3px 9px;
     border-radius: 99px;
+}
+
+@media (max-width: 720px) {
+    .product-section { padding: 56px 20px; }
+    .product-section-title { font-size: 26px; }
+    .product-section-sub { font-size: 15px; margin-bottom: 28px; }
 }

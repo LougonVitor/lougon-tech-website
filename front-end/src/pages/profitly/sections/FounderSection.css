@@ -46,6 +46,8 @@
 
 .pf-countdown {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 14px;
     margin-bottom: 36px;
 }
@@ -162,6 +164,12 @@
 }
 
 @media (max-width: 980px) {
+    /* Acompanha o .pf-section: sem trava de altura fora do desktop. */
+    .profitly-page .pf-founder {
+        min-height: 0;
+        padding-top: 96px;
+    }
+
     .pf-plans {
         grid-template-columns: 1fr;
         max-width: 640px;
@@ -189,11 +197,35 @@
     }
 
     .profitly-page .pf-founder {
-        padding-top: 110px;
+        padding-top: 92px;
         padding-bottom: 72px;
     }
 
     .pf-founder-fineprint {
         margin-top: 28px;
+    }
+}
+
+@media (max-width: 420px) {
+    .pf-founder-perks {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .pf-founder-perk {
+        flex-direction: row;
+        text-align: left;
+        align-items: flex-start;
+        padding: 14px 16px;
+    }
+
+    .pf-countdown-unit {
+        min-width: 0;
+        flex: 1;
+        padding: 10px 6px;
+    }
+
+    .pf-countdown-num {
+        font-size: 22px;
     }
 }

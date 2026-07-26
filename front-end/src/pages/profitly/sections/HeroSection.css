@@ -5,6 +5,15 @@
         var(--pf-bg);
 }
 
+/* 100vh vira mínimo, não teto: em viewports baixas (ex.: 1024×768) o conteúdo
+   não cabe e o overflow hidden do .pf-section cortava as trilhas. Escopo
+   .profitly-page para vencer o .pf-section de ProfitlyPage.css. */
+.profitly-page .pf-hero {
+    height: auto;
+    min-height: 100vh;
+    overflow: visible;
+}
+
 .pf-hero-layout {
     display: grid;
     grid-template-columns: 1.05fr 0.95fr;
@@ -809,18 +818,67 @@
     padding: 6px 10px;
 }
 
+/* Empilhado: o mockup continua visível (antes sumia), centralizado abaixo do
+   conteúdo e com a inclinação 3D suavizada para caber melhor na largura. */
 @media (max-width: 980px) {
     .pf-hero-layout {
         grid-template-columns: 1fr;
+        gap: 40px;
     }
 
     .pf-hero-stage {
-        display: none;
+        width: 100%;
+        max-width: 640px;
+        margin: 0 auto;
+        padding: 16px 48px 48px 8px;
+    }
+
+    .pf-hero-laptop {
+        transform: rotateY(-5deg) rotateX(2deg);
+    }
+
+    .pf-hero-phone {
+        transform: rotateY(-5deg) rotateX(2deg) rotateZ(-2deg);
+        bottom: -28px;
     }
 }
 
 @media (max-width: 720px) {
     .pf-hero-tracks {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 640px) {
+    /* Sem espaço para o celular "espiando": ele repete os dados do notebook,
+       então sai de cena e o notebook ganha a largura toda, sem inclinação. */
+    .pf-hero-phone {
+        display: none;
+    }
+
+    .pf-hero-stage {
+        padding: 8px 0 8px;
+        max-width: 480px;
+    }
+
+    .pf-hero-laptop {
+        transform: none;
+        padding: 14px;
+    }
+
+    .pf-hero-stats-row {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .pf-hero-stat-ring {
+        grid-column: 1 / -1;
+        flex-direction: row;
+        gap: 12px;
+        padding: 10px 14px;
+    }
+
+    .pf-hero-bottom-row {
         grid-template-columns: 1fr;
     }
 }

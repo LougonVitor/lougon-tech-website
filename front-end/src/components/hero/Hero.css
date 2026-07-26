@@ -140,5 +140,26 @@
 
 @media (max-width: 600px) {
     .hero-title { font-size: 34px; }
-    .hero { padding: 90px 20px 80px; }
+    .hero { padding: 72px 20px 64px; }
+}
+
+/* Botões em coluna e com largura cheia: alvo de toque maior e sem quebra
+   estranha de linha em telas estreitas. */
+@media (max-width: 480px) {
+    .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+        max-width: 340px;
+        margin: 0 auto;
+    }
+
+    .btn-primary,
+    .btn-outline {
+        text-align: center;
+    }
+}
+
+@media (max-width: 400px) {
+    .hero-title { font-size: 29px; letter-spacing: -0.5px; }
+    .hero-sub { font-size: 15px; }
 }

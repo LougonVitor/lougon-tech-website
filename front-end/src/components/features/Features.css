@@ -39,7 +39,7 @@
 
 .feat-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
     gap: 32px;
     margin-top: 40px;
 }
@@ -79,4 +79,23 @@
     color: var(--text-secondary);
     line-height: 1.6;
     font-weight: 300;
+}
+
+@media (max-width: 720px) {
+    .features { padding: 56px 20px; }
+    .section-title { font-size: 26px; }
+    .section-sub { font-size: 15px; }
+
+    .feat-grid {
+        gap: 14px;
+        margin-top: 28px;
+    }
+
+    /* Sem hover no toque: os cards já nascem com borda visível para não
+       parecerem texto solto. */
+    .feat-item {
+        border-color: var(--border);
+        background: rgba(255, 255, 255, 0.02);
+        padding: 18px 16px;
+    }
 }
