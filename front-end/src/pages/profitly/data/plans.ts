@@ -27,6 +27,8 @@ export interface Plan {
     priceNote: string
     badge?: string
     featured?: boolean
+    /* Aviso exibido acima dos grupos de funcionalidades (ex.: herda tudo de outro plano). */
+    includesNote?: string
     groups: PlanFeatureGroup[]
     ctaLabel: string
     ctaAction: PlanCtaAction
@@ -79,22 +81,16 @@ export const PLANS: Plan[] = [
         priceNote: `Anunciado em 05/09/2026 · ${FOUNDER_PLAN_SPOTS} vagas`,
         badge: `${FOUNDER_PLAN_SPOTS} vagas · vitalício`,
         featured: true,
+        includesNote: 'Tudo o que tem no Plano Grátis, e muito mais:',
         groups: [
             {
                 icon: 'wallet',
                 title: 'Carteira de investimentos',
                 features: [
-                    { text: 'Adicione ativos manualmente' },
-                    { text: 'Adicione ativos importando pelo extrato da B3' },
                     { text: 'Integração automática com a B3', soon: true },
                     { text: 'Integração automática com corretoras', soon: true },
                     { text: 'Declaração de IRPF', soon: true },
                     { text: 'Análise avançada de ações' },
-                    { text: 'Analise a evolução do seu patrimônio, renda e proventos' },
-                    {
-                        text: 'Personalização completa da forma como sua carteira é apresentada — gráficos, classes etc. Deixe seus investimentos do seu jeito de analisar',
-                        soon: true,
-                    },
                 ],
             },
             {
@@ -103,15 +99,8 @@ export const PLANS: Plan[] = [
                 features: [
                     { text: 'Análise semanal por IA de como está cada ativo da sua carteira', soon: true },
                     { text: 'Notícias no seu WhatsApp dos ativos que você escolher', soon: true },
-                    { text: 'Preço teto por Graham' },
                     { text: 'Três diferentes cálculos de preço teto' },
                     { text: 'Análise da sua carteira por meio de IA', soon: true },
-                    { text: 'Dividendos' },
-                    { text: 'Cotação' },
-                    { text: 'Vários indicadores fundamentalistas' },
-                    { text: 'Notícias do mercado de ações e dos seus ativos', soon: true },
-                    { text: 'Comparador de ativos' },
-                    { text: 'Acesso ao mercado global de ações', soon: true },
                 ],
             },
             {

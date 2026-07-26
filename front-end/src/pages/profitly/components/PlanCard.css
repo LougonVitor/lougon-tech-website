@@ -79,6 +79,20 @@
     margin-top: 6px;
 }
 
+.pf-plan-includes {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--pf-purple-light);
+    background: rgba(143, 102, 238, 0.1);
+    border: 1px solid rgba(143, 102, 238, 0.3);
+    border-radius: 12px;
+    padding: 11px 14px;
+    margin-bottom: 20px;
+}
+
 .pf-plan-groups {
     display: flex;
     flex-direction: column;

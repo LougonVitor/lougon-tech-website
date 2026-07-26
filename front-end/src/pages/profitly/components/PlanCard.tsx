@@ -27,6 +27,12 @@ export function PlanCard({ plan }: PlanCardProps) {
                 <div className="pf-plan-price-note">{plan.priceNote}</div>
             </div>
 
+            {plan.includesNote && (
+                <div className="pf-plan-includes">
+                    <Icon name="sparkles" size={15} /> {plan.includesNote}
+                </div>
+            )}
+
             <div className="pf-plan-groups">
                 {plan.groups.map((group) => (
                     <div key={group.title} className="pf-plan-group">
