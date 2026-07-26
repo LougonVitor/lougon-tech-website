@@ -21,6 +21,8 @@ export function Modal({ onClose, children }: ModalProps) {
         }
     }, [onClose])
 
+    const portalTarget = document.querySelector('.profitly-page') ?? document.body
+
     return createPortal(
         <div className="pf-modal-overlay" onClick={onClose}>
             <div className="pf-modal" onClick={(event) => event.stopPropagation()}>
@@ -30,6 +32,6 @@ export function Modal({ onClose, children }: ModalProps) {
                 {children}
             </div>
         </div>,
-        document.body,
+        portalTarget,
     )
 }
