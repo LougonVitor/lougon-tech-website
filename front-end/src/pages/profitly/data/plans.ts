@@ -3,6 +3,7 @@ import {
     FOUNDER_PLAN_PRICE_LABEL,
     FOUNDER_PLAN_REGULAR_PRICE_LABEL,
     FOUNDER_PLAN_SPOTS,
+    FOUNDER_PLAN_SPOTS_TAKEN,
     PROFITLY_LAUNCH_LABEL,
 } from './constants'
 
@@ -22,6 +23,19 @@ export interface PlanFeatureGroup {
 
 export type PlanCtaAction = 'leadForm' | 'quiz'
 
+/* Passo do acordo do plano: o que o assinante dá e o que recebe em troca. */
+export interface PlanDealStep {
+    icon: IconName
+    title: string
+    text: string
+}
+
+/* Vagas limitadas do plano, exibidas como barra de progresso. */
+export interface PlanSpots {
+    taken: number
+    total: number
+}
+
 export interface Plan {
     id: string
     name: string
@@ -32,6 +46,9 @@ export interface Plan {
     priceNote: string
     badge?: string
     featured?: boolean
+    spots?: PlanSpots
+    /* Explicação curta de como o plano funciona, acima das funcionalidades. */
+    deal?: PlanDealStep[]
     /* Aviso exibido acima dos grupos de funcionalidades (ex.: herda tudo de outro plano). */
     includesNote?: string
     groups: PlanFeatureGroup[]
@@ -87,6 +104,24 @@ export const PLANS: Plan[] = [
         priceNote: `Somente para as ${FOUNDER_PLAN_SPOTS} primeiras vagas · vitalício · lançamento em ${PROFITLY_LAUNCH_LABEL}`,
         badge: `${FOUNDER_PLAN_SPOTS} vagas · ${FOUNDER_PLAN_PRICE_LABEL} vitalício`,
         featured: true,
+        spots: { taken: FOUNDER_PLAN_SPOTS_TAKEN, total: FOUNDER_PLAN_SPOTS },
+        deal: [
+            {
+                icon: 'flask',
+                title: 'Você entra na fase de desenvolvimento',
+                text: `a Profitly é lançada em ${PROFITLY_LAUNCH_LABEL} e, até lá, fundadores usam a plataforma antes de todo mundo e ajudam a construí-la — sugestões e bugs viram prioridade.`,
+            },
+            {
+                icon: 'coins',
+                title: 'Por ajudar nessa fase, você paga muito menos',
+                text: `${FOUNDER_PLAN_PRICE_LABEL} em vez dos ${FOUNDER_PLAN_REGULAR_PRICE_LABEL}/mês que o plano vai custar depois. É a nossa contrapartida.`,
+            },
+            {
+                icon: 'lock',
+                title: 'E esse preço nunca muda para você',
+                text: 'o valor de fundador fica congelado para sempre. O preço sobe para quem chegar depois, nunca para quem esteve aqui desde o começo.',
+            },
+        ],
         includesNote: 'Tudo o que tem no Plano Grátis, e muito mais:',
         groups: [
             {

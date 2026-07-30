@@ -44,147 +44,13 @@
     margin: 0 auto 32px;
 }
 
-.pf-founder-how {
-    width: 100%;
-    max-width: 860px;
-    text-align: left;
-    margin-bottom: 32px;
-    padding: 24px 28px;
-    border-radius: 18px;
-    background:
-        radial-gradient(circle at 0% 0%, rgba(143, 102, 238, 0.14), transparent 60%),
-        var(--pf-card);
-    border: 1px solid rgba(143, 102, 238, 0.4);
-}
-
-.pf-founder-how-head {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.9px;
-    text-transform: uppercase;
-    color: var(--pf-amber);
-    margin-bottom: 18px;
-}
-
-.pf-founder-steps {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-.pf-founder-step {
-    display: flex;
-    align-items: flex-start;
-    gap: 14px;
-}
-
-.pf-founder-step-number {
-    flex: 0 0 auto;
-    width: 26px;
-    height: 26px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Sora', sans-serif;
-    font-size: 13px;
-    font-weight: 700;
-    color: var(--pf-purple-light);
-    background: rgba(143, 102, 238, 0.16);
-    border: 1px solid rgba(143, 102, 238, 0.4);
-}
-
-.pf-founder-step-body {
-    font-size: 13.5px;
-    line-height: 1.6;
-    color: var(--pf-text-muted);
-    font-weight: 300;
-}
-
-.pf-founder-step-body strong {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 15px;
-    font-weight: 600;
-    color: #fff;
-    margin-bottom: 4px;
-}
-
-.pf-founder-step-body strong .ti {
-    color: var(--pf-purple-light);
-    flex-shrink: 0;
-}
-
-.pf-founder-spots-bar {
-    width: 100%;
-    max-width: 860px;
-    text-align: left;
-    margin-bottom: 40px;
-    padding: 16px 20px;
-    border-radius: 14px;
-    background: var(--pf-card);
-    border: 1px solid rgba(240, 178, 62, 0.35);
-}
-
-.pf-founder-spots-head {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 10px;
-}
-
-.pf-founder-spots-count {
-    font-size: 13.5px;
-    color: var(--pf-text-muted);
-}
-
-.pf-founder-spots-count strong {
-    font-family: 'Sora', sans-serif;
-    font-size: 16px;
-    color: #fff;
-}
-
-.pf-founder-spots-urgency {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.3px;
-    text-transform: uppercase;
-    color: var(--pf-amber);
-}
-
-.pf-founder-spots-track {
-    height: 10px;
-    border-radius: 99px;
-    background: rgba(255, 255, 255, 0.07);
-    overflow: hidden;
-}
-
-.pf-founder-spots-fill {
-    display: block;
-    height: 100%;
-    border-radius: 99px;
-    background: linear-gradient(90deg, var(--pf-purple), var(--pf-amber));
-}
-
 .pf-founder-offer {
     display: flex;
     align-items: center;
     gap: 20px;
     text-align: left;
     padding: 20px 28px;
-    margin-bottom: 36px;
+    margin-bottom: 44px;
     border-radius: 16px;
     background: linear-gradient(135deg, rgba(240, 178, 62, 0.16), rgba(143, 102, 238, 0.12));
     border: 1px solid rgba(240, 178, 62, 0.35);
@@ -210,60 +76,6 @@
     font-size: 14.5px;
     color: var(--pf-text);
     margin-bottom: 2px;
-}
-
-.pf-founder-perks {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
-    width: 100%;
-    max-width: 860px;
-    margin-bottom: 44px;
-}
-
-.pf-founder-perk {
-    background: var(--pf-card);
-    border: 1px solid var(--pf-border);
-    border-radius: 14px;
-    padding: 18px 14px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-}
-
-.pf-founder-perk-icon {
-    color: var(--pf-purple-light);
-}
-
-.pf-founder-perk-text {
-    font-size: 12.5px;
-    color: var(--pf-text-muted);
-    line-height: 1.4;
-}
-
-.pf-founder-perk-text strong {
-    color: var(--pf-text);
-    display: block;
-    font-size: 13.5px;
-    margin-bottom: 2px;
-}
-
-.pf-founder-perk-highlight {
-    flex-direction: row;
-    justify-content: center;
-    text-align: left;
-    width: 100%;
-    max-width: 860px;
-    margin: -20px auto 44px;
-    padding: 18px 24px;
-    background: linear-gradient(135deg, rgba(37, 211, 102, 0.14), rgba(143, 102, 238, 0.1));
-    border-color: rgba(37, 211, 102, 0.35);
-}
-
-.pf-founder-perk-highlight .pf-founder-perk-icon {
-    color: #25d366;
-    flex-shrink: 0;
 }
 
 .pf-plans {
@@ -314,32 +126,11 @@
 }
 
 @media (max-width: 720px) {
-    .pf-founder-perks {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .pf-founder-perk-highlight {
-        flex-direction: column;
-        text-align: center;
-    }
-
     .pf-founder-offer {
         flex-direction: column;
         gap: 10px;
         text-align: center;
         padding: 18px 20px;
-    }
-
-    .pf-founder-how {
-        padding: 20px 18px;
-    }
-
-    .pf-founder-step {
-        gap: 12px;
-    }
-
-    .pf-founder-spots-head {
-        justify-content: flex-start;
     }
 
     .profitly-page .pf-founder {
@@ -353,18 +144,6 @@
 }
 
 @media (max-width: 420px) {
-    .pf-founder-perks {
-        grid-template-columns: 1fr;
-        gap: 10px;
-    }
-
-    .pf-founder-perk {
-        flex-direction: row;
-        text-align: left;
-        align-items: flex-start;
-        padding: 14px 16px;
-    }
-
     .pf-founder-offer-price {
         font-size: 34px;
     }

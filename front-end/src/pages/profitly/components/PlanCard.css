@@ -92,6 +92,111 @@
     margin-top: 6px;
 }
 
+.pf-plan-spots {
+    margin-top: 18px;
+}
+
+.pf-plan-spots-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 8px;
+}
+
+.pf-plan-spots-count {
+    font-size: 12.5px;
+    color: var(--pf-text-muted);
+}
+
+.pf-plan-spots-count strong {
+    font-family: 'Sora', sans-serif;
+    font-size: 14.5px;
+    color: #fff;
+}
+
+.pf-plan-spots-urgency {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    color: var(--pf-amber);
+}
+
+.pf-plan-spots-track {
+    height: 8px;
+    border-radius: 99px;
+    background: rgba(255, 255, 255, 0.07);
+    overflow: hidden;
+}
+
+.pf-plan-spots-fill {
+    display: block;
+    height: 100%;
+    border-radius: 99px;
+    background: linear-gradient(90deg, var(--pf-purple), var(--pf-amber));
+}
+
+.pf-plan-deal {
+    list-style: none;
+    margin: 0 0 20px;
+    padding: 16px 18px;
+    border-radius: 14px;
+    background: rgba(143, 102, 238, 0.07);
+    border: 1px solid rgba(143, 102, 238, 0.28);
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+.pf-plan-deal-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.pf-plan-deal-number {
+    flex: 0 0 auto;
+    width: 20px;
+    height: 20px;
+    margin-top: 1px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Sora', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--pf-purple-light);
+    background: rgba(143, 102, 238, 0.18);
+}
+
+.pf-plan-deal-text {
+    font-size: 12.5px;
+    line-height: 1.5;
+    color: var(--pf-text-muted);
+    font-weight: 300;
+}
+
+.pf-plan-deal-text strong {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 3px;
+}
+
+.pf-plan-deal-text strong .ti {
+    color: var(--pf-purple-light);
+    flex-shrink: 0;
+}
+
 .pf-plan-includes {
     display: flex;
     align-items: center;

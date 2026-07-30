@@ -32,7 +32,54 @@ export function PlanCard({ plan }: PlanCardProps) {
                     {plan.priceLabel}
                 </div>
                 <div className="pf-plan-price-note">{plan.priceNote}</div>
+
+                {plan.spots && (
+                    <div className="pf-plan-spots">
+                        <div className="pf-plan-spots-head">
+                            <span className="pf-plan-spots-count">
+                                <strong>
+                                    {plan.spots.taken} de {plan.spots.total}
+                                </strong>{' '}
+                                vagas preenchidas
+                            </span>
+                            <span className="pf-plan-spots-urgency">
+                                <Icon name="clock" size={12} />
+                                Corra: restam {plan.spots.total - plan.spots.taken}
+                            </span>
+                        </div>
+                        <div
+                            className="pf-plan-spots-track"
+                            role="progressbar"
+                            aria-valuenow={plan.spots.taken}
+                            aria-valuemin={0}
+                            aria-valuemax={plan.spots.total}
+                            aria-label={`${plan.spots.taken} de ${plan.spots.total} vagas preenchidas`}
+                        >
+                            <span
+                                className="pf-plan-spots-fill"
+                                style={{ width: `${Math.round((plan.spots.taken / plan.spots.total) * 100)}%` }}
+                            />
+                        </div>
+                    </div>
+                )}
             </div>
+
+            {plan.deal && (
+                <ol className="pf-plan-deal">
+                    {plan.deal.map((step, index) => (
+                        <li key={step.title} className="pf-plan-deal-step">
+                            <span className="pf-plan-deal-number">{index + 1}</span>
+                            <span className="pf-plan-deal-text">
+                                <strong>
+                                    <Icon name={step.icon} size={14} />
+                                    {step.title}
+                                </strong>
+                                {step.text}
+                            </span>
+                        </li>
+                    ))}
+                </ol>
+            )}
 
             {plan.includesNote && (
                 <div className="pf-plan-includes">
