@@ -74,12 +74,20 @@
 }
 
 .pf-plan-price-old {
-    font-size: 19px;
-    font-weight: 600;
-    color: var(--pf-text-dim);
+    font-size: 23px;
+    font-weight: 700;
+    color: var(--pf-text);
     text-decoration: line-through;
     text-decoration-color: var(--pf-red);
-    text-decoration-thickness: 2px;
+    text-decoration-thickness: 3px;
+}
+
+.pf-plan-price-hint {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11.5px;
+    font-weight: 400;
+    letter-spacing: 0.2px;
+    color: var(--pf-text-dim);
 }
 
 .pf-plan-featured .pf-plan-price {

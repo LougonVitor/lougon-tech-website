@@ -43,6 +43,8 @@ export interface Plan {
     priceLabel: string
     /* Preço cheio exibido riscado ao lado do `priceLabel`, como sinal de promoção. */
     priceStrikeLabel?: string
+    /* Ressalva curta ao lado do preço (ex.: a cobrança que gera esse valor). */
+    priceHint?: string
     priceNote: string
     badge?: string
     featured?: boolean
@@ -98,32 +100,43 @@ export const PLANS: Plan[] = [
         id: 'founder',
         name: 'Plano Fundador',
         tagline:
-            'Muito mais barato que o plano comum, vitalício no mesmo preço e com todas as funcionalidades futuras inclusas — inclusive as que outros planos não vão ter.',
+            'Para quem ajuda a construir a Profitly ainda na fase de desenvolvimento e garante o menor preço que a plataforma vai ter.',
         priceLabel: FOUNDER_PLAN_PRICE_LABEL,
         priceStrikeLabel: FOUNDER_PLAN_REGULAR_PRICE_LABEL,
+        priceHint: 'no plano anual',
         priceNote: `Somente para as ${FOUNDER_PLAN_SPOTS} primeiras vagas · vitalício · lançamento em ${PROFITLY_LAUNCH_LABEL}`,
         badge: `${FOUNDER_PLAN_SPOTS} vagas · ${FOUNDER_PLAN_PRICE_LABEL} vitalício`,
         featured: true,
         spots: { taken: FOUNDER_PLAN_SPOTS_TAKEN, total: FOUNDER_PLAN_SPOTS },
         deal: [
             {
-                icon: 'flask',
-                title: 'Você entra na fase de desenvolvimento',
-                text: `a Profitly é lançada em ${PROFITLY_LAUNCH_LABEL} e, até lá, fundadores usam a plataforma antes de todo mundo e ajudam a construí-la — sugestões e bugs viram prioridade.`,
-            },
-            {
-                icon: 'coins',
-                title: 'Por ajudar nessa fase, você paga muito menos',
-                text: `${FOUNDER_PLAN_PRICE_LABEL} em vez dos ${FOUNDER_PLAN_REGULAR_PRICE_LABEL}/mês que o plano vai custar depois. É a nossa contrapartida.`,
+                icon: 'whatsapp',
+                title: 'WhatsApp exclusivo com os desenvolvedores',
+                text: `a Profitly é lançada em ${PROFITLY_LAUNCH_LABEL} e fundadores ajudam a construí-la: você entra no grupo direto com quem desenvolve, e o que você sugerir vira prioridade.`,
             },
             {
                 icon: 'lock',
-                title: 'E esse preço nunca muda para você',
-                text: 'o valor de fundador fica congelado para sempre. O preço sobe para quem chegar depois, nunca para quem esteve aqui desde o começo.',
+                title: `${FOUNDER_PLAN_PRICE_LABEL} congelado para sempre`,
+                text: `em vez dos ${FOUNDER_PLAN_REGULAR_PRICE_LABEL}/mês que o plano vai custar depois. O preço de fundador nunca muda para você: sobe só para quem chegar depois.`,
+            },
+            {
+                icon: 'sparkles',
+                title: 'Todas as novas funcionalidades inclusas',
+                text: 'tudo o que for lançado daqui para frente entra no seu plano sem custo extra, inclusive o que outros planos não vão ter.',
             },
         ],
         includesNote: 'Tudo o que tem no Plano Grátis, e muito mais:',
         groups: [
+            {
+                icon: 'whatsapp',
+                title: 'Canal direto com quem desenvolve',
+                features: [
+                    {
+                        text: 'Acesso ao WhatsApp exclusivo dos desenvolvedores para sugerir melhorias e reportar bugs',
+                        highlight: true,
+                    },
+                ],
+            },
             {
                 icon: 'wallet',
                 title: 'Carteira de investimentos',
@@ -153,16 +166,6 @@ export const PLANS: Plan[] = [
                     { text: 'Relatório mensal da sua saúde financeira' },
                     { text: 'Insights de melhoria' },
                     { text: 'Indicação de cursos para o seu perfil de gasto', soon: true },
-                ],
-            },
-            {
-                icon: 'whatsapp',
-                title: 'Canal direto com quem desenvolve',
-                features: [
-                    {
-                        text: 'Acesso ao WhatsApp exclusivo dos desenvolvedores para sugerir melhorias e reportar bugs',
-                        highlight: true,
-                    },
                 ],
             },
         ],

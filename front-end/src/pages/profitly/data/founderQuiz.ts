@@ -10,7 +10,7 @@ export const FOUNDER_QUIZ: QuizQuestion[] = [
     },
     {
         question: 'O que mais te atrai no Plano Fundador?',
-        options: ['Preço vitalício', 'Acesso antecipado a tudo', 'Ajudar a moldar o produto'],
+        options: ['Preço vitalício', 'Todas as funcionalidades inclusas', 'Ajudar a moldar o produto'],
     },
     {
         question: 'Com que frequência você usaria a Profitly?',

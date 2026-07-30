@@ -30,6 +30,7 @@ export function PlanCard({ plan }: PlanCardProps) {
                         <span className="pf-plan-price-old">{plan.priceStrikeLabel}</span>
                     )}
                     {plan.priceLabel}
+                    {plan.priceHint && <span className="pf-plan-price-hint">{plan.priceHint}</span>}
                 </div>
                 <div className="pf-plan-price-note">{plan.priceNote}</div>
 

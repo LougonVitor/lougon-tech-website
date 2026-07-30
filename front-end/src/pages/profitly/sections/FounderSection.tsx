@@ -5,6 +5,7 @@ import {
     FOUNDER_PLAN_SPOTS,
     FOUNDER_PLAN_SPOTS_TAKEN,
     PROFITLY_LAUNCH_LABEL,
+    PROFITLY_LAUNCH_LABEL_TITLE,
     SECTION_IDS,
 } from '../data/constants'
 import { PLANS } from '../data/plans'
@@ -28,10 +29,11 @@ export function FounderSection() {
                 </p>
 
                 <div className="pf-founder-offer">
-                    <span className="pf-founder-offer-price">{PROFITLY_LAUNCH_LABEL}</span>
+                    <span className="pf-founder-offer-price">{PROFITLY_LAUNCH_LABEL_TITLE}</span>
                     <span className="pf-founder-offer-text">
                         <strong>Data de lançamento da Profitly</strong>
-                        O Plano Fundador garante preço vitalício e acesso antecipado a partir dessa data.
+                        O Plano Fundador garante o preço mais baixo da plataforma, congelado para sempre, e todas as
+                        funcionalidades que vierem depois.
                     </span>
                 </div>
 
