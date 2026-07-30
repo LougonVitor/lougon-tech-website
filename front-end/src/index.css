@@ -20,8 +20,6 @@
     --gradient: linear-gradient(135deg, #4f7cff 0%, #b267ff 100%);
     --gradient-text: linear-gradient(135deg, #7c9bff 0%, #d6a9ff 100%);
     --gradient-soft: linear-gradient(135deg, rgba(79, 124, 255, 0.14) 0%, rgba(178, 103, 255, 0.14) 100%);
-
-    --whatsapp: #25d366;
 }
 
 * {
