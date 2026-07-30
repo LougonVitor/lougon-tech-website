@@ -6,8 +6,8 @@ import invStockAnalysis from '../../../assets/profitly/inv-stock-analysis.png'
 import invStockComparator from '../../../assets/profitly/inv-stock-comparator.png'
 
 const SLIDES = [
-    { src: invWallet, alt: 'Carteira de investimentos do Profitly' },
     { src: invStockAnalysis, alt: 'Análise de ativo do Profitly' },
+    { src: invWallet, alt: 'Carteira de investimentos do Profitly' },
     { src: invStockComparator, alt: 'Comparador de ações do Profitly' },
 ]
 
