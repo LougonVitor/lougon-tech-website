@@ -25,7 +25,12 @@ export function PlanCard({ plan }: PlanCardProps) {
             <div className="pf-plan-head">
                 <h3 className="pf-plan-name">{plan.name}</h3>
                 <p className="pf-plan-tagline">{plan.tagline}</p>
-                <div className="pf-plan-price">{plan.priceLabel}</div>
+                <div className="pf-plan-price">
+                    {plan.priceStrikeLabel && (
+                        <span className="pf-plan-price-old">{plan.priceStrikeLabel}</span>
+                    )}
+                    {plan.priceLabel}
+                </div>
                 <div className="pf-plan-price-note">{plan.priceNote}</div>
             </div>
 

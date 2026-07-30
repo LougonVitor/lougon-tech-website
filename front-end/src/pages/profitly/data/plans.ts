@@ -1,5 +1,10 @@
 import type { IconName } from '../components/icons'
-import { FOUNDER_PLAN_PRICE_LABEL, FOUNDER_PLAN_SPOTS, PROFITLY_LAUNCH_LABEL } from './constants'
+import {
+    FOUNDER_PLAN_PRICE_LABEL,
+    FOUNDER_PLAN_REGULAR_PRICE_LABEL,
+    FOUNDER_PLAN_SPOTS,
+    PROFITLY_LAUNCH_LABEL,
+} from './constants'
 
 export interface PlanFeature {
     text: string
@@ -22,6 +27,8 @@ export interface Plan {
     name: string
     tagline: string
     priceLabel: string
+    /* Preço cheio exibido riscado ao lado do `priceLabel`, como sinal de promoção. */
+    priceStrikeLabel?: string
     priceNote: string
     badge?: string
     featured?: boolean
@@ -76,6 +83,7 @@ export const PLANS: Plan[] = [
         tagline:
             'Muito mais barato que o plano comum, vitalício no mesmo preço e com todas as funcionalidades futuras inclusas — inclusive as que outros planos não vão ter.',
         priceLabel: FOUNDER_PLAN_PRICE_LABEL,
+        priceStrikeLabel: FOUNDER_PLAN_REGULAR_PRICE_LABEL,
         priceNote: `Somente para as ${FOUNDER_PLAN_SPOTS} primeiras vagas · vitalício · lançamento em ${PROFITLY_LAUNCH_LABEL}`,
         badge: `${FOUNDER_PLAN_SPOTS} vagas · ${FOUNDER_PLAN_PRICE_LABEL} vitalício`,
         featured: true,
