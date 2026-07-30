@@ -65,23 +65,6 @@ export function PlanCard({ plan }: PlanCardProps) {
                 )}
             </div>
 
-            {plan.deal && (
-                <ol className="pf-plan-deal">
-                    {plan.deal.map((step, index) => (
-                        <li key={step.title} className="pf-plan-deal-step">
-                            <span className="pf-plan-deal-number">{index + 1}</span>
-                            <span className="pf-plan-deal-text">
-                                <strong>
-                                    <Icon name={step.icon} size={14} />
-                                    {step.title}
-                                </strong>
-                                {step.text}
-                            </span>
-                        </li>
-                    ))}
-                </ol>
-            )}
-
             {plan.includesNote && (
                 <div className="pf-plan-includes">
                     <Icon name="sparkles" size={15} /> {plan.includesNote}

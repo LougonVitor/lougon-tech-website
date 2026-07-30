@@ -149,62 +149,6 @@
     background: linear-gradient(90deg, var(--pf-purple), var(--pf-amber));
 }
 
-.pf-plan-deal {
-    list-style: none;
-    margin: 0 0 20px;
-    padding: 16px 18px;
-    border-radius: 14px;
-    background: rgba(143, 102, 238, 0.07);
-    border: 1px solid rgba(143, 102, 238, 0.28);
-    display: flex;
-    flex-direction: column;
-    gap: 13px;
-}
-
-.pf-plan-deal-step {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-}
-
-.pf-plan-deal-number {
-    flex: 0 0 auto;
-    width: 20px;
-    height: 20px;
-    margin-top: 1px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Sora', sans-serif;
-    font-size: 11px;
-    font-weight: 700;
-    color: var(--pf-purple-light);
-    background: rgba(143, 102, 238, 0.18);
-}
-
-.pf-plan-deal-text {
-    font-size: 12.5px;
-    line-height: 1.5;
-    color: var(--pf-text-muted);
-    font-weight: 300;
-}
-
-.pf-plan-deal-text strong {
-    display: flex;
-    align-items: center;
-    gap: 7px;
-    font-size: 13.5px;
-    font-weight: 600;
-    color: #fff;
-    margin-bottom: 3px;
-}
-
-.pf-plan-deal-text strong .ti {
-    color: var(--pf-purple-light);
-    flex-shrink: 0;
-}
-
 .pf-plan-includes {
     display: flex;
     align-items: center;

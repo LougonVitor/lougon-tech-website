@@ -23,13 +23,6 @@ export interface PlanFeatureGroup {
 
 export type PlanCtaAction = 'leadForm' | 'quiz'
 
-/* Passo do acordo do plano: o que o assinante dá e o que recebe em troca. */
-export interface PlanDealStep {
-    icon: IconName
-    title: string
-    text: string
-}
-
 /* Vagas limitadas do plano, exibidas como barra de progresso. */
 export interface PlanSpots {
     taken: number
@@ -49,8 +42,6 @@ export interface Plan {
     badge?: string
     featured?: boolean
     spots?: PlanSpots
-    /* Explicação curta de como o plano funciona, acima das funcionalidades. */
-    deal?: PlanDealStep[]
     /* Aviso exibido acima dos grupos de funcionalidades (ex.: herda tudo de outro plano). */
     includesNote?: string
     groups: PlanFeatureGroup[]
@@ -108,23 +99,6 @@ export const PLANS: Plan[] = [
         badge: `${FOUNDER_PLAN_SPOTS} vagas · ${FOUNDER_PLAN_PRICE_LABEL} vitalício`,
         featured: true,
         spots: { taken: FOUNDER_PLAN_SPOTS_TAKEN, total: FOUNDER_PLAN_SPOTS },
-        deal: [
-            {
-                icon: 'whatsapp',
-                title: 'WhatsApp exclusivo com os desenvolvedores',
-                text: `a Profitly é lançada em ${PROFITLY_LAUNCH_LABEL} e fundadores ajudam a construí-la: você entra no grupo direto com quem desenvolve, e o que você sugerir vira prioridade.`,
-            },
-            {
-                icon: 'lock',
-                title: `${FOUNDER_PLAN_PRICE_LABEL} congelado para sempre`,
-                text: `em vez dos ${FOUNDER_PLAN_REGULAR_PRICE_LABEL}/mês que o plano vai custar depois. O preço de fundador nunca muda para você: sobe só para quem chegar depois.`,
-            },
-            {
-                icon: 'sparkles',
-                title: 'Todas as novas funcionalidades inclusas',
-                text: 'tudo o que for lançado daqui para frente entra no seu plano sem custo extra, inclusive o que outros planos não vão ter.',
-            },
-        ],
         includesNote: 'Tudo o que tem no Plano Grátis, e muito mais:',
         groups: [
             {
