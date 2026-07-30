@@ -1,5 +1,5 @@
 import type { Icon } from '../components/icons'
-import { FOUNDER_PLAN_SPOTS } from './constants'
+import { FOUNDER_PLAN_PRICE_LABEL, FOUNDER_PLAN_SPOTS, PROFITLY_LAUNCH_LABEL } from './constants'
 
 type IconName = Parameters<typeof Icon>[0]['name']
 
@@ -77,9 +77,9 @@ export const PLANS: Plan[] = [
         name: 'Plano Fundador',
         tagline:
             'Muito mais barato que o plano comum, vitalício no mesmo preço e com todas as funcionalidades futuras inclusas — inclusive as que outros planos não vão ter.',
-        priceLabel: 'Preço de fundador',
-        priceNote: `Anunciado em 05/09/2026 · ${FOUNDER_PLAN_SPOTS} vagas`,
-        badge: `${FOUNDER_PLAN_SPOTS} vagas · vitalício`,
+        priceLabel: FOUNDER_PLAN_PRICE_LABEL,
+        priceNote: `Somente para as ${FOUNDER_PLAN_SPOTS} primeiras vagas · vitalício · lançamento em ${PROFITLY_LAUNCH_LABEL}`,
+        badge: `${FOUNDER_PLAN_SPOTS} vagas · ${FOUNDER_PLAN_PRICE_LABEL} vitalício`,
         featured: true,
         includesNote: 'Tudo o que tem no Plano Grátis, e muito mais:',
         groups: [
@@ -125,7 +125,7 @@ export const PLANS: Plan[] = [
                 ],
             },
         ],
-        ctaLabel: 'Quero uma das 50 vagas',
+        ctaLabel: `Quero uma das ${FOUNDER_PLAN_SPOTS} vagas`,
         ctaAction: 'quiz',
     },
 ]

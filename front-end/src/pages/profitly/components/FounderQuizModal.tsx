@@ -2,6 +2,7 @@ import { useState } from 'react'
 import type { FormEvent } from 'react'
 import { Modal } from './Modal'
 import { Icon } from './icons'
+import { FOUNDER_PLAN_PRICE_LABEL, FOUNDER_PLAN_SPOTS } from '../data/constants'
 import { FOUNDER_QUIZ } from '../data/founderQuiz'
 import { submitLead } from '../data/leadSubmission'
 import './FounderQuizModal.css'
@@ -56,8 +57,9 @@ export function FounderQuizModal({ onClose }: FounderQuizModalProps) {
             <Modal onClose={onClose}>
                 <h3 className="pf-lead-title">Quase lá!</h3>
                 <p className="pf-lead-sub">
-                    Suas respostas foram salvas! Preencha seus dados abaixo para reservar uma das 50 vagas do Plano
-                    Fundador. Entraremos em contato se seu perfil se enquadrar!
+                    Suas respostas foram salvas! Preencha seus dados abaixo para reservar uma das{' '}
+                    {FOUNDER_PLAN_SPOTS} vagas do Plano Fundador por {FOUNDER_PLAN_PRICE_LABEL}. Entraremos em
+                    contato se seu perfil se enquadrar!
                 </p>
 
                 <form className="pf-lead-form" onSubmit={handleSubmit}>

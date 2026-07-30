@@ -44,36 +44,38 @@
     margin: 0 auto 32px;
 }
 
-.pf-countdown {
+.pf-founder-offer {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 14px;
+    align-items: center;
+    gap: 20px;
+    text-align: left;
+    padding: 20px 28px;
     margin-bottom: 36px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, rgba(240, 178, 62, 0.16), rgba(143, 102, 238, 0.12));
+    border: 1px solid rgba(240, 178, 62, 0.35);
 }
 
-.pf-countdown-unit {
-    background: var(--pf-card);
-    border: 1px solid var(--pf-border);
-    border-radius: 12px;
-    padding: 14px 18px;
-    min-width: 74px;
-}
-
-.pf-countdown-num {
+.pf-founder-offer-price {
     font-family: 'Sora', sans-serif;
-    font-size: 26px;
+    font-size: 40px;
     font-weight: 700;
-    color: #fff;
+    color: var(--pf-amber);
     line-height: 1;
+    white-space: nowrap;
 }
 
-.pf-countdown-label {
-    font-size: 10.5px;
-    color: var(--pf-text-dim);
-    text-transform: uppercase;
-    letter-spacing: 0.6px;
-    margin-top: 6px;
+.pf-founder-offer-text {
+    font-size: 13px;
+    color: var(--pf-text-muted);
+    line-height: 1.5;
+}
+
+.pf-founder-offer-text strong {
+    display: block;
+    font-size: 14.5px;
+    color: var(--pf-text);
+    margin-bottom: 2px;
 }
 
 .pf-founder-perks {
@@ -187,13 +189,11 @@
         text-align: center;
     }
 
-    .pf-countdown {
-        gap: 8px;
-    }
-
-    .pf-countdown-unit {
-        min-width: 60px;
-        padding: 10px 12px;
+    .pf-founder-offer {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+        padding: 18px 20px;
     }
 
     .profitly-page .pf-founder {
@@ -219,13 +219,7 @@
         padding: 14px 16px;
     }
 
-    .pf-countdown-unit {
-        min-width: 0;
-        flex: 1;
-        padding: 10px 6px;
-    }
-
-    .pf-countdown-num {
-        font-size: 22px;
+    .pf-founder-offer-price {
+        font-size: 34px;
     }
 }
