@@ -1,25 +1,31 @@
 import './Hero.css'
-import { useLanguage } from '../../i18n/LanguageContext'
+import { HOME_SECTION_IDS } from '../../config/sections'
 
 export function Hero() {
-    const { t } = useLanguage();
+    return (
+        <section className="hero">
+            <div className="hero-grid" aria-hidden="true" />
+            <div className="hero-orb hero-orb-blue" aria-hidden="true" />
+            <div className="hero-orb hero-orb-purple" aria-hidden="true" />
 
-    return(
-    <>
-    <section className="hero">
-        <div className="hero-grid" aria-hidden="true"></div>
-        <div className="hero-orb hero-orb-blue" aria-hidden="true"></div>
-        <div className="hero-orb hero-orb-purple" aria-hidden="true"></div>
+            <div className="hero-badge">Soluções de software B2B e B2C</div>
+            <h1 className="hero-title">
+                Sistemas inteligentes para <em>empresas e investidores</em>
+            </h1>
+            <p className="hero-sub">
+                A Lougon.tech desenvolve softwares sob medida que simplificam operações, garantem conformidade e
+                impulsionam o crescimento — para empresas de todos os tamanhos e para investidores que gerenciam
+                suas próprias carteiras.
+            </p>
 
-        <div className="hero-badge">{t.hero.badge}</div>
-        <h1 className="hero-title">{t.hero.titlePrefix}<em>{t.hero.titleEm}</em></h1>
-        <p className="hero-sub">{t.hero.sub}</p>
-
-        <div className="hero-actions">
-            <button className="btn-primary" onClick={() => document.getElementById('products')?.scrollIntoView({behavior:'smooth'})}>{t.hero.exploreProducts}</button>
-            <button className="btn-outline" onClick={() => document.getElementById('contact')?.scrollIntoView({behavior:'smooth'})}>{t.hero.talkToUs}</button>
-        </div>
-    </section>
-    </>
+            <div className="hero-actions">
+                <a className="btn-primary" href={`#${HOME_SECTION_IDS.products}`}>
+                    Conheça nossos produtos
+                </a>
+                <a className="btn-outline" href={`#${HOME_SECTION_IDS.contact}`}>
+                    Fale conosco
+                </a>
+            </div>
+        </section>
     )
 }

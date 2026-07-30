@@ -30,8 +30,13 @@
     padding: 0;
 }
 
+/* Barra de rolagem da página: as propriedades padrão valem em Chrome 121+,
+   Firefox e Safari 18.2+ — e nesses navegadores elas anulam os estilos
+   ::-webkit-scrollbar, por isso o bloco WebKit abaixo fica só como fallback. */
 html {
     scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(178, 103, 255, 0.5) transparent;
 }
 
 body {
@@ -41,17 +46,14 @@ body {
     color: var(--text-primary);
 }
 
+#root {
+    background: var(--bg-primary);
+    overflow-x: hidden;
+}
+
 ::selection {
     background: rgba(178, 103, 255, 0.35);
     color: #fff;
-}
-
-/* Barra de rolagem da página. As propriedades padrão valem em Chrome 121+,
-   Firefox e Safari 18.2+ — e nesses navegadores elas anulam os estilos
-   ::-webkit-scrollbar, por isso o bloco WebKit fica só como fallback. */
-html {
-    scrollbar-width: thin;
-    scrollbar-color: rgba(178, 103, 255, 0.5) transparent;
 }
 
 @supports not (scrollbar-width: thin) {

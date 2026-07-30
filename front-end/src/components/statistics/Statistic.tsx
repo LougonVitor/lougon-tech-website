@@ -1,29 +1,21 @@
 import './Statistic.css'
-import { useLanguage } from '../../i18n/LanguageContext'
+
+const STATS = [
+    { value: '3+', label: 'Produtos lançados' },
+    { value: '100%', label: 'Baseado na nuvem' },
+    { value: '24/7', label: 'Suporte' },
+    { value: 'BR', label: 'Feito no Brasil' },
+]
 
 export function Statistic() {
-    const { t } = useLanguage();
-
     return (
-    <>
-    <div className="statistics-container">
-        <div className="statistic-box">
-            <div className="statistic-box-num">3+</div>
-            <div className="statistic-box-label">{t.statistics.productsLaunched}</div>
+        <div className="statistics-container">
+            {STATS.map((stat) => (
+                <div key={stat.label} className="statistic-box">
+                    <div className="statistic-box-num">{stat.value}</div>
+                    <div className="statistic-box-label">{stat.label}</div>
+                </div>
+            ))}
         </div>
-            <div className="statistic-box">
-            <div className="statistic-box-num">100%</div>
-            <div className="statistic-box-label">{t.statistics.cloudBased}</div>
-        </div>
-            <div className="statistic-box">
-            <div className="statistic-box-num">24/7</div>
-            <div className="statistic-box-label">{t.statistics.support}</div>
-        </div>
-            <div className="statistic-box">
-            <div className="statistic-box-num">BR</div>
-            <div className="statistic-box-label">{t.statistics.madeInBrazil}</div>
-        </div>
-    </div>
-    </>
     )
 }

@@ -15,6 +15,10 @@
     min-height: 0;
 }
 
+.pf-inv-sub {
+    margin-bottom: 14px;
+}
+
 /* Duas colunas para aproveitar a largura e encurtar a lista na vertical. */
 .pf-inv-list {
     display: grid;

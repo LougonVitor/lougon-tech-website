@@ -1,20 +1,22 @@
 import { Link } from 'react-router-dom'
 import './Contact.css'
-import { useLanguage } from '../../i18n/LanguageContext'
+import { DEMO_REQUEST_MAILTO } from '../../config/links'
+import { HOME_SECTION_IDS } from '../../config/sections'
 
 export function Contact() {
-    const { t } = useLanguage();
+    return (
+        <section className="cta-band" id={HOME_SECTION_IDS.contact}>
+            <h2>Pronto para modernizar sua empresa — ou sua carteira?</h2>
+            <p>Agende uma demonstração gratuita para sua empresa ou experimente a Profitly para seus próprios investimentos.</p>
 
-    return(
-    <>
-    <section className="cta-band" id="contact">
-        <h2>{t.contact.title}</h2>
-        <p>{t.contact.sub}</p>
-        <div className="cta-actions">
-            <a className="btn-primary cta-link" href="mailto:tech@lougon.tech?subject=Demo%20request">{t.contact.scheduleDemo}</a>
-            <Link className="btn-outline cta-link" to="/profitly">{t.contact.tryProfitly}</Link>
-        </div>
-    </section>
-    </>
+            <div className="cta-actions">
+                <a className="btn-primary cta-link" href={DEMO_REQUEST_MAILTO}>
+                    Agendar demonstração gratuita
+                </a>
+                <Link className="btn-outline cta-link" to="/profitly">
+                    Experimentar a Profitly
+                </Link>
+            </div>
+        </section>
     )
 }

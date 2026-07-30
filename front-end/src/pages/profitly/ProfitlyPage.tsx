@@ -4,7 +4,7 @@ import { InvestmentsSection } from './sections/InvestmentsSection'
 import { FinanceSection } from './sections/FinanceSection'
 import { AdvancedAnalysisSection } from './sections/AdvancedAnalysisSection'
 import { FounderSection } from './sections/FounderSection'
-import { WhatsAppGroupFab } from '../../components/whatsapp/WhatsAppGroupFab'
+import { EarlyAccessFab } from '../../components/whatsapp/EarlyAccessFab'
 import { Icon } from './components/icons'
 import './ProfitlyPage.css'
 
@@ -12,7 +12,7 @@ export function ProfitlyPage() {
     return (
         <div className="profitly-page">
             <Link to="/" className="pf-back-link">
-                <Icon name="arrowRight" size={13} style={{ transform: 'rotate(180deg)' }} />
+                <Icon name="arrowLeft" size={13} />
                 lougon.tech
             </Link>
 
@@ -22,7 +22,7 @@ export function ProfitlyPage() {
             <AdvancedAnalysisSection />
             <FounderSection />
 
-            <WhatsAppGroupFab label="Acesso antecipado no WhatsApp" />
+            <EarlyAccessFab />
         </div>
     )
 }

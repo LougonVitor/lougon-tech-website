@@ -52,6 +52,11 @@
     font-weight: 300;
 }
 
+/* Só a largura do texto: a pílula não deve esticar na coluna flex do card. */
+.pf-analysis-card-pill {
+    width: fit-content;
+}
+
 .pf-analysis-note {
     margin-top: 18px;
     display: flex;

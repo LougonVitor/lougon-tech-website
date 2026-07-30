@@ -121,6 +121,7 @@
 }
 
 .btn-outline {
+    display: inline-block;
     background: transparent;
     color: var(--text-primary);
     border: 1px solid var(--border-hover);
@@ -129,6 +130,7 @@
     font-family: 'DM Sans', sans-serif;
     font-size: 15px;
     font-weight: 400;
+    text-decoration: none;
     cursor: pointer;
     transition: border-color 0.2s, background 0.2s;
 }

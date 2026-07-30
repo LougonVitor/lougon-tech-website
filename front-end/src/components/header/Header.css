@@ -73,37 +73,6 @@
     transform: translateY(-1px);
 }
 
-.header-nav-right {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-}
-
-.lang-toggle {
-    display: flex;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid var(--border);
-    border-radius: 999px;
-    padding: 3px;
-    cursor: pointer;
-}
-
-.lang-toggle-option {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 12px;
-    font-weight: 600;
-    padding: 5px 10px;
-    border-radius: 999px;
-    color: var(--text-secondary);
-    transition: background 0.2s, color 0.2s;
-}
-
-.lang-toggle-active {
-    background: var(--gradient);
-    color: #fff;
-}
-
 /* Em telas menores o menu não some: quebra para uma segunda linha centralizada,
    mantendo todos os links acessíveis. */
 @media (max-width: 720px) {
@@ -123,24 +92,17 @@
     }
 }
 
-/* Compacta logo, toggle e CTA para logo + ações dividirem a primeira linha
-   (com os links na segunda) mesmo em telas de 360–375px. */
+/* Compacta logo e CTA para os dois dividirem a primeira linha (com os links na
+   segunda) mesmo em telas de 360–375px. */
 @media (max-width: 500px) {
     .header-nav { padding: 12px 12px 10px; }
 
     .header-logo { font-size: 17px; }
     .header-logo-icon { width: 22px; height: 22px; }
 
-    .header-nav-right { gap: 8px; }
-
     .header-nav-cta {
         padding: 7px 12px;
         font-size: 12px;
-    }
-
-    .lang-toggle-option {
-        padding: 4px 8px;
-        font-size: 11px;
     }
 }
 

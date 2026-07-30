@@ -1,7 +1,7 @@
-/* Widget fixo no canto inferior direito: leva para o grupo do WhatsApp de
-   acesso antecipado. Fechado é um círculo com a logo; no hover/foco abre e
-   revela o texto. */
-.wa-group-fab {
+/* Widget fixo no canto inferior direito: abre a conversa de acesso antecipado
+   no WhatsApp. Fechado é um círculo com a logo; no hover/foco abre e revela o
+   texto. */
+.early-access-fab {
     position: fixed;
     bottom: 24px;
     right: 24px;
@@ -18,19 +18,19 @@
     transition: transform 0.2s, box-shadow 0.2s, padding 0.25s ease;
 }
 
-.wa-group-fab:hover,
-.wa-group-fab:focus-visible {
+.early-access-fab:hover,
+.early-access-fab:focus-visible {
     transform: translateY(-3px);
     box-shadow: 0 12px 30px rgba(37, 211, 102, 0.55);
     padding-right: 20px;
 }
 
-.wa-group-fab-icon {
+.early-access-fab-icon {
     font-size: 28px;
     line-height: 1;
 }
 
-.wa-group-fab-label {
+.early-access-fab-label {
     max-width: 0;
     opacity: 0;
     overflow: hidden;
@@ -40,14 +40,14 @@
     transition: max-width 0.25s ease, opacity 0.2s ease, margin-left 0.25s ease;
 }
 
-.wa-group-fab:hover .wa-group-fab-label,
-.wa-group-fab:focus-visible .wa-group-fab-label {
+.early-access-fab:hover .early-access-fab-label,
+.early-access-fab:focus-visible .early-access-fab-label {
     max-width: 260px;
     opacity: 1;
     margin-left: 10px;
 }
 
-.wa-group-fab-ring {
+.early-access-fab-ring {
     position: absolute;
     top: 0;
     left: 0;
@@ -55,18 +55,18 @@
     height: 58px;
     border-radius: 50%;
     box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.55);
-    animation: wa-group-pulse 2.2s infinite;
+    animation: early-access-pulse 2.2s infinite;
     pointer-events: none;
 }
 
-@keyframes wa-group-pulse {
+@keyframes early-access-pulse {
     0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.55); }
     70% { box-shadow: 0 0 0 16px rgba(37, 211, 102, 0); }
     100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .wa-group-fab-ring {
+    .early-access-fab-ring {
         animation: none;
     }
 }
@@ -74,23 +74,23 @@
 /* Sem hover para abrir: no toque o rótulo só ocuparia espaço, então fica
    apenas o círculo. */
 @media (max-width: 600px) {
-    .wa-group-fab {
+    .early-access-fab {
         bottom: 18px;
         right: 18px;
         height: 52px;
         padding: 0 12px;
     }
 
-    .wa-group-fab-icon {
+    .early-access-fab-icon {
         font-size: 25px;
     }
 
-    .wa-group-fab-ring {
+    .early-access-fab-ring {
         width: 52px;
         height: 52px;
     }
 
-    .wa-group-fab-label {
+    .early-access-fab-label {
         display: none;
     }
 }

@@ -126,7 +126,7 @@ export function SlideShow({ images }: SlideShowProps) {
                         aria-label="Imagem anterior"
                         onClick={() => goTo(index - 1)}
                     >
-                        <Icon name="arrowRight" size={16} style={{ transform: 'rotate(180deg)' }} />
+                        <Icon name="arrowLeft" size={16} />
                     </button>
                     <button
                         type="button"

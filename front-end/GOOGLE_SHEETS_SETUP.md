@@ -7,13 +7,13 @@ que envia os dados por `fetch` para uma URL de Google Apps Script Web App
 definida em `VITE_GOOGLE_SHEETS_WEBHOOK_URL`. Sem essa variável configurada, o
 lead só é logado no console (nada é enviado). Os dois formulários gravam na
 mesma planilha; a coluna `Plano` identifica de qual formulário o lead veio
-(`Grátis` ou `Fundador`). O Plano Grátis não pede cidade, então essa coluna
-fica vazia para esses leads.
+(`Grátis` ou `Fundador`). O Plano Grátis não pede cidade nem passa pelo quiz,
+então as colunas `Cidade` e `Respostas` ficam vazias para esses leads.
 
 ## 1. Criar a planilha
 
 1. Crie uma planilha nova no Google Sheets.
-2. Na primeira linha, adicione os cabeçalhos: `Data`, `Origem`, `Nome`, `Email`, `Telefone`, `Cidade`, `Plano`.
+2. Na primeira linha, adicione os cabeçalhos: `Data`, `Origem`, `Nome`, `Email`, `Telefone`, `Cidade`, `Plano`, `Respostas`.
 
 ## 2. Criar o Apps Script
 
@@ -33,6 +33,7 @@ function doPost(e) {
     data.phone || '',
     data.city || '',
     data.plan || '',
+    data.answers || '',
   ]);
 
   return ContentService.createTextOutput(

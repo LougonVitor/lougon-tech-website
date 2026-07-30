@@ -1,7 +1,5 @@
-import type { Icon } from '../components/icons'
+import type { IconName } from '../components/icons'
 import { FOUNDER_PLAN_PRICE_LABEL, FOUNDER_PLAN_SPOTS, PROFITLY_LAUNCH_LABEL } from './constants'
-
-type IconName = Parameters<typeof Icon>[0]['name']
 
 export interface PlanFeature {
     text: string

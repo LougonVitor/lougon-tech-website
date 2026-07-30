@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useCallback, useState } from 'react'
 import type { Plan } from '../data/plans'
 import { Icon } from './icons'
 import { LeadFormModal } from './LeadFormModal'
@@ -11,6 +11,8 @@ interface PlanCardProps {
 
 export function PlanCard({ plan }: PlanCardProps) {
     const [modalOpen, setModalOpen] = useState(false)
+    /* Estável entre renders: o Modal usa `onClose` como dependência de efeito. */
+    const closeModal = useCallback(() => setModalOpen(false), [])
 
     return (
         <div className={`pf-plan ${plan.featured ? 'pf-plan-featured' : ''}`}>
@@ -64,18 +66,19 @@ export function PlanCard({ plan }: PlanCardProps) {
             </div>
 
             <button
+                type="button"
                 className={plan.featured ? 'pf-btn-primary pf-plan-cta' : 'pf-btn-outline pf-plan-cta'}
                 onClick={() => setModalOpen(true)}
             >
                 {plan.ctaLabel} <Icon name="arrowRight" size={15} />
             </button>
 
-            {modalOpen && plan.ctaAction === 'leadForm' && (
-                <LeadFormModal onClose={() => setModalOpen(false)} />
-            )}
-            {modalOpen && plan.ctaAction === 'quiz' && (
-                <FounderQuizModal onClose={() => setModalOpen(false)} />
-            )}
+            {modalOpen &&
+                (plan.ctaAction === 'quiz' ? (
+                    <FounderQuizModal onClose={closeModal} />
+                ) : (
+                    <LeadFormModal onClose={closeModal} />
+                ))}
         </div>
     )
 }

@@ -3,6 +3,8 @@ export interface LeadPayload {
     email: string
     phone: string
     city?: string
+    /* Respostas do quiz do Plano Fundador, já formatadas numa única linha. */
+    answers?: string
     source?: string
     plan: string
 }

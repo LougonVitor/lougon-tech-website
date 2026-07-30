@@ -1,35 +1,41 @@
-import { Icon } from '../components/icons'
+import { Icon, type IconName } from '../components/icons'
 import { SECTION_IDS } from '../data/constants'
 import './AdvancedAnalysisSection.css'
 
-const IDEAS = [
+interface AnalysisIdea {
+    icon: IconName
+    title: string
+    description: string
+}
+
+const IDEAS: AnalysisIdea[] = [
     {
-        icon: 'brain' as const,
+        icon: 'brain',
         title: 'IA que percorre os relatórios trimestrais das empresas',
         description: 'Uma IA que lê os relatórios trimestrais das empresas e resume os pontos que realmente importam para a sua análise.',
     },
     {
-        icon: 'scan' as const,
+        icon: 'scan',
         title: 'Scanner de mercado multi-critério',
         description: 'Filtros combinando indicadores fundamentalistas e técnicos para encontrar oportunidades em segundos.',
     },
     {
-        icon: 'flask' as const,
+        icon: 'flask',
         title: 'Backtesting de estratégias',
         description: 'Simule como uma estratégia de compra/venda teria performado no histórico real de preços.',
     },
     {
-        icon: 'shield' as const,
+        icon: 'shield',
         title: 'Simulador de risco de carteira',
         description: 'Value at Risk, correlação entre ativos e cenários de estresse para dimensionar o risco real.',
     },
     {
-        icon: 'bell' as const,
+        icon: 'bell',
         title: 'Alertas inteligentes personalizados',
         description: 'Receba um aviso quando um preço, indicador ou evento relevante mudar para um ativo que você acompanha.',
     },
     {
-        icon: 'trendingUp' as const,
+        icon: 'trendingUp',
         title: 'Fluxo institucional e volume anômalo',
         description: 'Sinais de movimentação atípica de grandes players para identificar mudanças de tendência mais cedo.',
     },
@@ -57,7 +63,7 @@ export function AdvancedAnalysisSection() {
                         </div>
                         <div className="pf-analysis-card-title">{idea.title}</div>
                         <p className="pf-analysis-card-desc">{idea.description}</p>
-                        <span className="pf-pill pf-pill-soon" style={{ width: 'fit-content' }}>Em avaliação</span>
+                        <span className="pf-pill pf-pill-soon pf-analysis-card-pill">Em avaliação</span>
                     </div>
                 ))}
             </div>

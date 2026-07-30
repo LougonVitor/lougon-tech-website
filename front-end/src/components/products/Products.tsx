@@ -1,95 +1,146 @@
 import { Link } from 'react-router-dom'
 import './Products.css'
-import { useLanguage } from '../../i18n/LanguageContext'
+import { PRODUCT_IDEA_MAILTO, productInterestMailto } from '../../config/links'
+import { HOME_SECTION_IDS } from '../../config/sections'
+
+type TagTone = 'blue' | 'teal' | 'gray' | 'gradient'
+
+interface Product {
+    name: string
+    description: string
+    cardClass: string
+    iconClass: string
+    tablerIcon: string
+    /* Etiqueta no canto do card. Com `live`, vira o selo verde com ponto pulsante. */
+    status: { label: string; live?: boolean }
+    tags: { label: string; tone: TagTone }[]
+    /* Destino do card inteiro: rota interna (`to`) ou link externo/mailto (`href`). */
+    link: { label: string; to?: string; href?: string }
+}
+
+const PRODUCTS: Product[] = [
+    {
+        name: 'Profitly',
+        description:
+            'Nossa plataforma de investimentos B2C. Compare ativos, acompanhe o mercado brasileiro em tempo real e gerencie sua própria carteira — dividendos, rankings e o pulso do mercado em um só lugar.',
+        cardClass: 'product-card-profitly',
+        iconClass: 'product-card-icon-gradient',
+        tablerIcon: 'ti-chart-candle',
+        status: { label: 'Beta ao vivo', live: true },
+        tags: [
+            { label: 'B2C', tone: 'gradient' },
+            { label: 'Investimentos', tone: 'blue' },
+            { label: 'Dados em tempo real', tone: 'gray' },
+        ],
+        link: { label: 'Abrir Profitly', to: '/profitly' },
+    },
+    {
+        name: 'Sistema de Auditoria',
+        description:
+            'Plataforma completa de gestão de auditorias. Planeje, execute e reporte auditorias internas e externas com total rastreabilidade e controle de conformidade.',
+        cardClass: 'product-card-audit',
+        iconClass: 'product-card-icon-blue',
+        tablerIcon: 'ti-clipboard-check',
+        status: { label: 'Em desenvolvimento' },
+        tags: [
+            { label: 'Conformidade', tone: 'blue' },
+            { label: 'Relatórios', tone: 'teal' },
+            { label: 'Multiusuário', tone: 'gray' },
+        ],
+        link: { label: 'Saiba mais', href: productInterestMailto('Sistema de Auditoria') },
+    },
+    {
+        name: 'Sistema Odontológico',
+        description:
+            'Uma solução completa de gestão de clínicas — agendamento, prontuários, faturamento e histórico de tratamentos em um só lugar.',
+        cardClass: 'product-card-dental',
+        iconClass: 'product-card-icon-teal',
+        tablerIcon: 'ti-tooth',
+        status: { label: 'Em desenvolvimento' },
+        tags: [
+            { label: 'Agendamento', tone: 'teal' },
+            { label: 'Prontuários', tone: 'blue' },
+            { label: 'Faturamento', tone: 'gray' },
+        ],
+        link: { label: 'Saiba mais', href: productInterestMailto('Sistema Odontológico') },
+    },
+    {
+        name: 'Mais por vir',
+        description:
+            'Estamos sempre desenvolvendo novas soluções. Tem uma necessidade específica? Vamos conversar — talvez já estejamos trabalhando exatamente nisso.',
+        cardClass: 'product-card-plus',
+        iconClass: 'product-card-icon-sky',
+        tablerIcon: 'ti-sparkles',
+        status: { label: 'Em breve' },
+        tags: [{ label: 'Em desenvolvimento', tone: 'gray' }],
+        link: { label: 'Sugerir uma ideia', href: PRODUCT_IDEA_MAILTO },
+    },
+]
+
+function ProductCardContent({ product }: { product: Product }) {
+    return (
+        <>
+            {product.status.live ? (
+                <div className="product-live-badge">
+                    <span className="product-live-dot" />
+                    {product.status.label}
+                </div>
+            ) : (
+                <div className="product-coming-soon">{product.status.label}</div>
+            )}
+
+            <div className={`product-card-icon ${product.iconClass}`}>
+                <i className={`ti ${product.tablerIcon}`} aria-hidden="true" />
+            </div>
+
+            <div className="product-card-name">{product.name}</div>
+            <p className="product-card-desc">{product.description}</p>
+
+            <div className="product-card-tags">
+                {product.tags.map((tag) => (
+                    <span key={tag.label} className={`product-tag product-tag-${tag.tone}`}>
+                        {tag.label}
+                    </span>
+                ))}
+            </div>
+
+            <span className="product-card-link">
+                {product.link.label} <i className="ti ti-arrow-right" aria-hidden="true" />
+            </span>
+        </>
+    )
+}
+
+function ProductCard({ product }: { product: Product }) {
+    const className = `product-card ${product.cardClass}`
+
+    /* O card inteiro é clicável — por isso o rótulo interno é só um <span>. */
+    return product.link.to ? (
+        <Link className={className} to={product.link.to}>
+            <ProductCardContent product={product} />
+        </Link>
+    ) : (
+        <a className={className} href={product.link.href}>
+            <ProductCardContent product={product} />
+        </a>
+    )
+}
 
 export function Products() {
-    const { t } = useLanguage();
-
     return (
-    <>
-    <section className="product-section" id="products">
-        <div className="product-section-label">{t.products.label}</div>
-        <h2 className="product-section-title">{t.products.title}</h2>
-        <p className="product-section-sub">{t.products.sub}</p>
+        <section className="product-section" id={HOME_SECTION_IDS.products}>
+            <div className="product-section-label">Nossos produtos</div>
+            <h2 className="product-section-title">Software para empresas e investidores</h2>
+            <p className="product-section-sub">
+                Sistemas sob medida para resolver problemas reais — para empresas que gerenciam suas operações e
+                para pessoas que administram seu próprio dinheiro.
+            </p>
 
-        <div className="product-products">
-
-        <Link className="product-card product-card-profitly" to="/profitly">
-            <div className="product-live-badge"><span className="product-live-dot"></span>{t.products.liveBeta}</div>
-
-            <div className="product-card-icon product-card-icon-gradient">
-                <i className="ti ti-chart-candle" aria-hidden="true"></i>
+            <div className="product-products">
+                {PRODUCTS.map((product) => (
+                    <ProductCard key={product.name} product={product} />
+                ))}
             </div>
-
-            <div className="product-card-name">{t.products.profitlyName}</div>
-
-            <p className="product-card-desc">{t.products.profitlyDesc}</p>
-
-            <div className="product-card-tags">
-                <span className="product-tag product-tag-gradient">{t.products.tagB2C}</span>
-                <span className="product-tag product-tag-blue">{t.products.tagInvesting}</span>
-                <span className="product-tag product-tag-gray">{t.products.tagRealTime}</span>
-            </div>
-            <span className="product-card-link">{t.products.openProfitly} <i className="ti ti-arrow-right" aria-hidden="true"></i></span>
-        </Link>
-
-        <div className="product-card product-card-audit">
-            <div className="product-coming-soon">{t.products.inDevelopment}</div>
-
-            <div className="product-card-icon product-card-icon-blue">
-                <i className="ti ti-clipboard-check" aria-hidden="true"></i>
-            </div>
-
-            <div className="product-card-name">{t.products.auditName}</div>
-
-            <p className="product-card-desc">{t.products.auditDesc}</p>
-
-            <div className="product-card-tags">
-                <span className="product-tag product-tag-blue">{t.products.tagCompliance}</span>
-                <span className="product-tag product-tag-teal">{t.products.tagReporting}</span>
-                <span className="product-tag product-tag-gray">{t.products.tagMultiUser}</span>
-            </div>
-            <a className="product-card-link">{t.products.learnMore} <i className="ti ti-arrow-right" aria-hidden="true"></i></a>
-        </div>
-
-        <div className="product-card product-card-dental">
-            <div className="product-coming-soon">{t.products.inDevelopment}</div>
-
-            <div className="product-card-icon product-card-icon-teal">
-                <i className="ti ti-tooth" aria-hidden="true"></i>
-            </div>
-
-            <div className="product-card-name">{t.products.dentalName}</div>
-
-            <p className="product-card-desc">{t.products.dentalDesc}</p>
-
-            <div className="product-card-tags">
-                <span className="product-tag product-tag-teal">{t.products.tagScheduling}</span>
-                <span className="product-tag product-tag-blue">{t.products.tagPatientRecords}</span>
-                <span className="product-tag product-tag-gray">{t.products.tagBilling}</span>
-            </div>
-            <a className="product-card-link">{t.products.learnMore} <i className="ti ti-arrow-right" aria-hidden="true"></i></a>
-        </div>
-
-        <div className="product-card product-card-plus" /* style="border-style: dashed; opacity: 0.75;" */>
-            <div className="product-coming-soon">{t.products.comingSoon}</div>
-
-            <div className="product-card-icon product-card-icon-sky">
-                <i className="ti ti-sparkles" aria-hidden="true"></i>
-            </div>
-
-            <div className="product-card-name">{t.products.moreName}</div>
-
-            <p className="product-card-desc">{t.products.moreDesc}</p>
-
-            <div className="product-card-tags">
-                <span className="product-tag product-tag-gray">{t.products.tagInDevelopment}</span>
-            </div>
-            <a className="product-card-link" href="mailto:tech@lougon.tech?subject=Product%20idea%20for%20Lougon.tech">{t.products.suggestIdea} <i className="ti ti-arrow-right" aria-hidden="true"></i></a>
-        </div>
-
-        </div>
-    </section>
-    </>
+        </section>
     )
 }

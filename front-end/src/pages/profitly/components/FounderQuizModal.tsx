@@ -1,19 +1,27 @@
 import { useState } from 'react'
 import type { FormEvent } from 'react'
+import { LeadField } from './LeadField'
+import { LeadSuccessModal } from './LeadSuccessModal'
 import { Modal } from './Modal'
-import { Icon } from './icons'
 import { FOUNDER_PLAN_PRICE_LABEL, FOUNDER_PLAN_SPOTS } from '../data/constants'
 import { FOUNDER_QUIZ } from '../data/founderQuiz'
 import { submitLead } from '../data/leadSubmission'
 import './FounderQuizModal.css'
 import './LeadFormModal.css'
 
+const TITLE = 'Plano Fundador'
+
+/* Pergunta e resposta lado a lado, numa única célula da planilha de leads. */
+function formatAnswers(answers: string[]) {
+    return FOUNDER_QUIZ.map((item, index) => `${item.question} ${answers[index] ?? '—'}`).join(' | ')
+}
+
 interface FounderQuizModalProps {
     onClose: () => void
 }
 
 export function FounderQuizModal({ onClose }: FounderQuizModalProps) {
-    const [step, setStep] = useState(0)
+    const [answers, setAnswers] = useState<string[]>([])
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [phone, setPhone] = useState('')
@@ -21,40 +29,38 @@ export function FounderQuizModal({ onClose }: FounderQuizModalProps) {
     const [submitting, setSubmitting] = useState(false)
     const [submitted, setSubmitted] = useState(false)
 
+    const step = answers.length
     const finished = step >= FOUNDER_QUIZ.length
-
-    function answer() {
-        setStep((prev) => prev + 1)
-    }
 
     async function handleSubmit(event: FormEvent) {
         event.preventDefault()
         setSubmitting(true)
-        await submitLead({ name, email, phone, city, source: 'founder-quiz', plan: 'Fundador' })
+        await submitLead({
+            name,
+            email,
+            phone,
+            city,
+            answers: formatAnswers(answers),
+            source: 'founder-quiz',
+            plan: 'Fundador',
+        })
         setSubmitting(false)
         setSubmitted(true)
     }
 
     if (submitted) {
         return (
-            <Modal onClose={onClose}>
-                <div className="pf-lead-success">
-                    <span className="pf-lead-success-icon">
-                        <Icon name="check" size={26} />
-                    </span>
-                    <h3 className="pf-lead-title">Prontinho!</h3>
-                    <p className="pf-lead-sub">
-                        Recebemos seus dados. Em breve entraremos em contato para confirmar sua vaga no Plano
-                        Fundador.
-                    </p>
-                </div>
-            </Modal>
+            <LeadSuccessModal
+                onClose={onClose}
+                label={TITLE}
+                message="Recebemos seus dados. Em breve entraremos em contato para confirmar sua vaga no Plano Fundador."
+            />
         )
     }
 
     if (finished) {
         return (
-            <Modal onClose={onClose}>
+            <Modal onClose={onClose} label={TITLE}>
                 <h3 className="pf-lead-title">Quase lá!</h3>
                 <p className="pf-lead-sub">
                     Suas respostas foram salvas! Preencha seus dados abaixo para reservar uma das{' '}
@@ -63,49 +69,10 @@ export function FounderQuizModal({ onClose }: FounderQuizModalProps) {
                 </p>
 
                 <form className="pf-lead-form" onSubmit={handleSubmit}>
-                    <label className="pf-lead-field">
-                        <span>Nome completo</span>
-                        <input
-                            type="text"
-                            required
-                            value={name}
-                            onChange={(event) => setName(event.target.value)}
-                            placeholder="Seu nome completo"
-                        />
-                    </label>
-
-                    <label className="pf-lead-field">
-                        <span>E-mail</span>
-                        <input
-                            type="email"
-                            required
-                            value={email}
-                            onChange={(event) => setEmail(event.target.value)}
-                            placeholder="voce@email.com"
-                        />
-                    </label>
-
-                    <label className="pf-lead-field">
-                        <span>Telefone</span>
-                        <input
-                            type="tel"
-                            required
-                            value={phone}
-                            onChange={(event) => setPhone(event.target.value)}
-                            placeholder="(00) 00000-0000"
-                        />
-                    </label>
-
-                    <label className="pf-lead-field">
-                        <span>Cidade</span>
-                        <input
-                            type="text"
-                            required
-                            value={city}
-                            onChange={(event) => setCity(event.target.value)}
-                            placeholder="Sua cidade"
-                        />
-                    </label>
+                    <LeadField label="Nome completo" type="text" value={name} onChange={setName} placeholder="Seu nome completo" />
+                    <LeadField label="E-mail" type="email" value={email} onChange={setEmail} placeholder="voce@email.com" />
+                    <LeadField label="Telefone" type="tel" value={phone} onChange={setPhone} placeholder="(00) 00000-0000" />
+                    <LeadField label="Cidade" type="text" value={city} onChange={setCity} placeholder="Sua cidade" />
 
                     <button className="pf-btn-primary pf-lead-submit" type="submit" disabled={submitting}>
                         {submitting ? 'Enviando...' : 'Quero minha vaga'}
@@ -118,10 +85,10 @@ export function FounderQuizModal({ onClose }: FounderQuizModalProps) {
     const current = FOUNDER_QUIZ[step]
 
     return (
-        <Modal onClose={onClose}>
+        <Modal onClose={onClose} label={TITLE}>
             <div className="pf-quiz-progress">
-                {FOUNDER_QUIZ.map((_, index) => (
-                    <span key={index} className={`pf-quiz-dot ${index <= step ? 'pf-quiz-dot-active' : ''}`} />
+                {FOUNDER_QUIZ.map((item, index) => (
+                    <span key={item.question} className={`pf-quiz-dot ${index <= step ? 'pf-quiz-dot-active' : ''}`} />
                 ))}
             </div>
 
@@ -129,7 +96,12 @@ export function FounderQuizModal({ onClose }: FounderQuizModalProps) {
 
             <div className="pf-quiz-options">
                 {current.options.map((option) => (
-                    <button key={option} className="pf-quiz-option" onClick={answer}>
+                    <button
+                        key={option}
+                        type="button"
+                        className="pf-quiz-option"
+                        onClick={() => setAnswers((previous) => [...previous, option])}
+                    >
                         {option}
                     </button>
                 ))}

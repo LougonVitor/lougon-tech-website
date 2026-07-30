@@ -1,24 +1,22 @@
 import './WhatsAppButton.css'
+import { WHATSAPP_CONTACT_URL } from '../../config/links'
 
 interface WhatsAppButtonProps {
-    /* Sobe o botão para não colidir com o widget do grupo. */
-    stacked?: boolean;
+    /* Sobe o botão para não colidir com o widget de acesso antecipado. */
+    stacked?: boolean
 }
 
 export function WhatsAppButton({ stacked = false }: WhatsAppButtonProps) {
-    const phone = '5528999354057';
-    const message = encodeURIComponent('Olá! Vim pelo site da Lougon.tech e gostaria de saber mais.');
-
     return (
         <a
             className={`whatsapp-fab${stacked ? ' whatsapp-fab-stacked' : ''}`}
-            href={`https://wa.me/${phone}?text=${message}`}
+            href={WHATSAPP_CONTACT_URL}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Fale conosco no WhatsApp"
         >
-            <span className="whatsapp-fab-ring"></span>
-            <i className="ti ti-brand-whatsapp" aria-hidden="true"></i>
+            <span className="whatsapp-fab-ring" aria-hidden="true" />
+            <i className="ti ti-brand-whatsapp" aria-hidden="true" />
         </a>
     )
 }

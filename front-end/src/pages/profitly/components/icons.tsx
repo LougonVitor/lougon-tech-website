@@ -1,6 +1,6 @@
 import type { CSSProperties } from 'react'
 
-type IconName =
+export type IconName =
     | 'wallet'
     | 'chart'
     | 'target'
@@ -9,6 +9,7 @@ type IconName =
     | 'calendar'
     | 'layers'
     | 'trendingUp'
+    | 'arrowLeft'
     | 'arrowRight'
     | 'check'
     | 'lock'
@@ -33,6 +34,7 @@ const TABLER_CLASS: Record<IconName, string> = {
     calendar: 'ti-calendar',
     layers: 'ti-stack-2',
     trendingUp: 'ti-trending-up',
+    arrowLeft: 'ti-arrow-left',
     arrowRight: 'ti-arrow-right',
     check: 'ti-check',
     lock: 'ti-lock',

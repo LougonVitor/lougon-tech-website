@@ -1,9 +1,12 @@
 import { useState } from 'react'
 import type { FormEvent } from 'react'
+import { LeadField } from './LeadField'
+import { LeadSuccessModal } from './LeadSuccessModal'
 import { Modal } from './Modal'
-import { Icon } from './icons'
 import { submitLead } from '../data/leadSubmission'
 import './LeadFormModal.css'
+
+const TITLE = 'Avise-me no lançamento'
 
 interface LeadFormModalProps {
     onClose: () => void
@@ -26,60 +29,25 @@ export function LeadFormModal({ onClose }: LeadFormModalProps) {
 
     if (submitted) {
         return (
-            <Modal onClose={onClose}>
-                <div className="pf-lead-success">
-                    <span className="pf-lead-success-icon">
-                        <Icon name="check" size={26} />
-                    </span>
-                    <h3 className="pf-lead-title">Prontinho!</h3>
-                    <p className="pf-lead-sub">
-                        Recebemos seus dados. Vamos te avisar assim que a Profitly for lançada.
-                    </p>
-                </div>
-            </Modal>
+            <LeadSuccessModal
+                onClose={onClose}
+                label={TITLE}
+                message="Recebemos seus dados. Vamos te avisar assim que a Profitly for lançada."
+            />
         )
     }
 
     return (
-        <Modal onClose={onClose}>
-            <h3 className="pf-lead-title">Avise-me no lançamento</h3>
+        <Modal onClose={onClose} label={TITLE}>
+            <h3 className="pf-lead-title">{TITLE}</h3>
             <p className="pf-lead-sub">
                 Deixe seus dados e te avisamos assim que o Plano Grátis estiver disponível.
             </p>
 
             <form className="pf-lead-form" onSubmit={handleSubmit}>
-                <label className="pf-lead-field">
-                    <span>Nome</span>
-                    <input
-                        type="text"
-                        required
-                        value={name}
-                        onChange={(event) => setName(event.target.value)}
-                        placeholder="Seu nome"
-                    />
-                </label>
-
-                <label className="pf-lead-field">
-                    <span>E-mail</span>
-                    <input
-                        type="email"
-                        required
-                        value={email}
-                        onChange={(event) => setEmail(event.target.value)}
-                        placeholder="voce@email.com"
-                    />
-                </label>
-
-                <label className="pf-lead-field">
-                    <span>Telefone</span>
-                    <input
-                        type="tel"
-                        required
-                        value={phone}
-                        onChange={(event) => setPhone(event.target.value)}
-                        placeholder="(00) 00000-0000"
-                    />
-                </label>
+                <LeadField label="Nome" type="text" value={name} onChange={setName} placeholder="Seu nome" />
+                <LeadField label="E-mail" type="email" value={email} onChange={setEmail} placeholder="voce@email.com" />
+                <LeadField label="Telefone" type="tel" value={phone} onChange={setPhone} placeholder="(00) 00000-0000" />
 
                 <button className="pf-btn-primary pf-lead-submit" type="submit" disabled={submitting}>
                     {submitting ? 'Enviando...' : 'Quero ser avisado'}

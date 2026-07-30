@@ -1,11 +1,9 @@
 import type { ReactNode } from 'react'
-import { Icon } from './icons'
+import { Icon, type IconName } from './icons'
 import './FeatureItem.css'
 
-type IconProps = Parameters<typeof Icon>[0]
-
 interface FeatureItemProps {
-    icon: IconProps['name']
+    icon: IconName
     title: string
     description: ReactNode
     status?: 'live' | 'soon'

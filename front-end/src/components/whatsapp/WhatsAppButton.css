@@ -44,6 +44,12 @@
     100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
 }
 
+@media (prefers-reduced-motion: reduce) {
+    .whatsapp-fab-ring {
+        animation: none;
+    }
+}
+
 @media (max-width: 600px) {
     .whatsapp-fab {
         width: 52px;
