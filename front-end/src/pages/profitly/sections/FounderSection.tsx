@@ -31,10 +31,10 @@ export function FounderSection() {
                 </p>
 
                 <div className="pf-founder-offer">
-                    <span className="pf-founder-offer-price">{FOUNDER_PLAN_PRICE_LABEL}</span>
+                    <span className="pf-founder-offer-price">{PROFITLY_LAUNCH_LABEL}</span>
                     <span className="pf-founder-offer-text">
-                        <strong>Lançamento em {PROFITLY_LAUNCH_LABEL}</strong>
-                        Preço vitalício de fundador — não muda nunca.
+                        <strong>Data de lançamento da Profitly</strong>
+                        O Plano Fundador garante preço vitalício e acesso antecipado a partir dessa data.
                     </span>
                 </div>
 
