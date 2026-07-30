@@ -33,8 +33,8 @@ export function FounderSection() {
                 <div className="pf-founder-offer">
                     <span className="pf-founder-offer-price">{FOUNDER_PLAN_PRICE_LABEL}</span>
                     <span className="pf-founder-offer-text">
-                        <strong>Somente para as {FOUNDER_PLAN_SPOTS} primeiras vagas.</strong>
-                        Preço vitalício de fundador — depois das {FOUNDER_PLAN_SPOTS} assinaturas, acabou.
+                        <strong>Lançamento em {PROFITLY_LAUNCH_LABEL}</strong>
+                        Preço vitalício de fundador — não muda nunca.
                     </span>
                 </div>
 
