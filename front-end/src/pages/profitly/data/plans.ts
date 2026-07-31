@@ -78,11 +78,9 @@ const FEATURE_GROUPS: FeatureGroupDefinition[] = [
         title: 'Investimento',
         features: [
             {
-                text: 'Carteira completa para acompanhar seus investimentos, proventos, evolução etc.',
+                text: 'Carteira completa para acompanhar seus investimentos, proventos, EUA',
                 free: true,
             },
-            { text: 'Ações BR e EUA', free: true },
-            { text: 'Tela para análise de ações individuais', free: true },
             { text: 'Preço teto por Graham', free: true },
             { text: 'Tela de comparador de ativos, com comparação fundamentalista', free: true },
             {
@@ -90,9 +88,7 @@ const FEATURE_GROUPS: FeatureGroupDefinition[] = [
                 free: true,
             },
             { text: 'Notícias pelo WhatsApp dos ativos que você possui na carteira', free: true },
-            { text: 'Preço teto por Bazin' },
-            { text: 'Preço teto por Gordon' },
-            { text: 'Média ponderada dos três preços teto' },
+            { text: 'Preço teto por Bazin, Gordon e média ponderada dos três preços teto' },
             {
                 text: 'IA que acompanha seus investimentos e as ações que você deseja comprar, fornecendo insights na velocidade que só uma IA consegue',
             },
