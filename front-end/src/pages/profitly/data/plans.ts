@@ -77,12 +77,9 @@ const FEATURE_GROUPS: FeatureGroupDefinition[] = [
         icon: 'wallet',
         title: 'Investimento',
         features: [
-            {
-                text: 'Carteira completa para acompanhar seus investimentos, proventos, EUA',
-                free: true,
-            },
+            { text: 'Carteira de investimento completa', free: true },
             { text: 'Preço teto por Graham', free: true },
-            { text: 'Tela de comparador de ativos', free: true },
+            { text: 'Comparador de ativos', free: true },
             {
                 text: 'Personalização completa da forma como sua carteira é apresentada',
                 free: true,
