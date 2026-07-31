@@ -78,14 +78,14 @@ const FEATURE_GROUPS: FeatureGroupDefinition[] = [
         title: 'Investimento',
         features: [
             { text: 'Carteira de investimento completa', free: true },
-            { text: 'Preço teto por Graham', free: true },
+            { text: 'Preço teto Graham', free: true },
             { text: 'Comparador de ativos', free: true },
             {
                 text: 'Personalização completa da forma como sua carteira é apresentada',
                 free: true,
             },
             { text: 'Notícias pelo WhatsApp dos ativos desejados', free: true },
-            { text: 'Preço teto por Bazin, Gordon e média ponderada dos três preços teto' },
+            { text: 'Preço teto Bazin, Gordon e média ponderada dos três preços teto' },
             { text: 'Assessor de investimentos com IA' },
             { text: 'Integração com a B3 e com corretoras', soon: true },
             { text: 'Declaração de IRPF', soon: true },
