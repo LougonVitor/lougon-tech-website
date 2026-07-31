@@ -149,18 +149,24 @@
     background: linear-gradient(90deg, var(--pf-purple), var(--pf-amber));
 }
 
-.pf-plan-includes {
+.pf-plan-perk {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
     font-size: 13.5px;
-    font-weight: 500;
-    color: var(--pf-purple-light);
-    background: rgba(143, 102, 238, 0.1);
-    border: 1px solid rgba(143, 102, 238, 0.3);
+    font-weight: 400;
+    line-height: 1.45;
+    color: var(--pf-text);
+    background: rgba(52, 212, 154, 0.08);
+    border: 1px solid rgba(52, 212, 154, 0.28);
     border-radius: 12px;
-    padding: 11px 14px;
+    padding: 12px 14px;
     margin-bottom: 20px;
+}
+
+.pf-plan-perk .ti {
+    flex: 0 0 auto;
+    color: var(--pf-teal);
 }
 
 .pf-plan-groups {
@@ -210,9 +216,11 @@
     color: var(--pf-teal);
 }
 
-.pf-plan-feature-mark-soon {
-    background: rgba(167, 139, 250, 0.14);
-    color: var(--pf-purple-light);
+/* Funcionalidade listada mas não inclusa no plano: fica visível para comparação,
+   só que apagada, para não competir com o que o plano realmente entrega. */
+.pf-plan-feature-mark-off {
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--pf-text-dim);
 }
 
 .pf-plan-feature-text {
@@ -222,22 +230,26 @@
     font-weight: 300;
 }
 
+.pf-plan-feature-off .pf-plan-feature-text {
+    color: var(--pf-text-dim);
+}
+
 .pf-plan-feature-pill {
     margin-left: 8px;
     vertical-align: middle;
     white-space: nowrap;
 }
 
-.pf-plan-feature-highlight {
-    background: rgba(52, 212, 154, 0.08);
-    border: 1px solid rgba(52, 212, 154, 0.28);
+.pf-plan-footnote {
+    margin: 22px 0 0;
+    padding: 12px 14px;
     border-radius: 12px;
-    padding: 12px;
-}
-
-.pf-plan-feature-highlight .pf-plan-feature-text {
-    color: var(--pf-text);
-    font-weight: 400;
+    background: rgba(143, 102, 238, 0.1);
+    border: 1px solid rgba(143, 102, 238, 0.3);
+    font-size: 13px;
+    line-height: 1.55;
+    font-weight: 300;
+    color: var(--pf-text-muted);
 }
 
 .pf-plan-cta {

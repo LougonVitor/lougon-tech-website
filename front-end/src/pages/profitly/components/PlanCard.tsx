@@ -65,9 +65,9 @@ export function PlanCard({ plan }: PlanCardProps) {
                 )}
             </div>
 
-            {plan.includesNote && (
-                <div className="pf-plan-includes">
-                    <Icon name="sparkles" size={15} /> {plan.includesNote}
+            {plan.perk && (
+                <div className="pf-plan-perk">
+                    <Icon name={plan.perk.icon} size={17} /> {plan.perk.text}
                 </div>
             )}
 
@@ -81,10 +81,12 @@ export function PlanCard({ plan }: PlanCardProps) {
                             {group.features.map((feature) => (
                                 <li
                                     key={feature.text}
-                                    className={`pf-plan-feature ${feature.highlight ? 'pf-plan-feature-highlight' : ''}`}
+                                    className={`pf-plan-feature ${feature.included ? '' : 'pf-plan-feature-off'}`}
                                 >
-                                    <span className={`pf-plan-feature-mark ${feature.soon ? 'pf-plan-feature-mark-soon' : ''}`}>
-                                        <Icon name={feature.soon ? 'clock' : 'check'} size={12} />
+                                    <span
+                                        className={`pf-plan-feature-mark ${feature.included ? '' : 'pf-plan-feature-mark-off'}`}
+                                    >
+                                        <Icon name={feature.included ? 'check' : 'x'} size={12} />
                                     </span>
                                     <span className="pf-plan-feature-text">
                                         {feature.text}
@@ -100,6 +102,8 @@ export function PlanCard({ plan }: PlanCardProps) {
                     </div>
                 ))}
             </div>
+
+            {plan.footNote && <p className="pf-plan-footnote">{plan.footNote}</p>}
 
             <button
                 type="button"

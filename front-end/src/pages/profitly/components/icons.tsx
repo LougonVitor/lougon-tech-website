@@ -12,6 +12,7 @@ export type IconName =
     | 'arrowLeft'
     | 'arrowRight'
     | 'check'
+    | 'x'
     | 'lock'
     | 'crown'
     | 'clock'
@@ -37,6 +38,7 @@ const TABLER_CLASS: Record<IconName, string> = {
     arrowLeft: 'ti-arrow-left',
     arrowRight: 'ti-arrow-right',
     check: 'ti-check',
+    x: 'ti-x',
     lock: 'ti-lock',
     crown: 'ti-crown',
     clock: 'ti-clock',
