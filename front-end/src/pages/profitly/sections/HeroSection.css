@@ -851,24 +851,28 @@
 }
 
 @media (max-width: 640px) {
-    /* Sem espaço para o celular "espiando": ele repete os dados do notebook,
-       então sai de cena e o notebook ganha a largura toda, sem inclinação. */
-    .pf-hero-phone {
-        display: none;
-    }
-
+    /* A folga da direita é onde o celular "espia"; ela acompanha o zoom para o
+       recorte do celular sobre o notebook ficar igual ao do desktop. */
     .pf-hero-stage {
-        padding: 8px 0 8px;
+        --pf-mock-zoom: 0.95;
+        padding: 8px calc(56px * var(--pf-mock-zoom)) calc(24px * var(--pf-mock-zoom)) 0;
         max-width: 480px;
     }
 
-    /* Mesmo desenho do desktop, só menor: o `zoom` diagrama o mock numa largura
+    /* Mesmo desenho do desktop, só menor: o `zoom` diagrama os mocks numa largura
        maior que a tela e encolhe tudo na mesma proporção, em vez de reempilhar
        os cards e virar um layout de celular. Os degraus abaixo mantêm essa
        largura de diagramação sempre perto dos ~490px do desktop. */
-    .pf-hero-laptop {
+    .pf-hero-laptop,
+    .pf-hero-phone {
         transform: none;
-        zoom: 0.95;
+        zoom: var(--pf-mock-zoom);
+    }
+
+    /* Encostado na borda do palco: sem tela sobrando para ele vazar como no desktop. */
+    .pf-hero-phone {
+        right: 0;
+        bottom: -20px;
     }
 
     /* Sem o card de aportes a linha ficaria com uma coluna vazia. */
@@ -882,13 +886,19 @@
 }
 
 @media (max-width: 480px) {
-    .pf-hero-laptop {
-        zoom: 0.85;
+    .pf-hero-stage {
+        --pf-mock-zoom: 0.82;
     }
 }
 
 @media (max-width: 400px) {
-    .pf-hero-laptop {
-        zoom: 0.7;
+    .pf-hero-stage {
+        --pf-mock-zoom: 0.68;
+    }
+}
+
+@media (max-width: 360px) {
+    .pf-hero-stage {
+        --pf-mock-zoom: 0.6;
     }
 }
