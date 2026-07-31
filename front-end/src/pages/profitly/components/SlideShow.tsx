@@ -12,7 +12,7 @@ interface SlideShowProps {
 }
 
 /** Largura máxima do slide ativo dentro do slot — a sobra é o "peek" dos vizinhos. */
-const ACTIVE_WIDTH_RATIO = 0.7
+const ACTIVE_WIDTH_RATIO = 0.8
 
 /** Usada até a imagem carregar e enquanto não há proporção medida. */
 const FALLBACK_ASPECT = 1.6

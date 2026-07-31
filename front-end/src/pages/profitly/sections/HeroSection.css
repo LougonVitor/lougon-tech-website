@@ -871,6 +871,12 @@
         grid-template-columns: 1fr 1fr;
     }
 
+    /* Com duas colunas o card de aportes sobraria sozinho na última linha:
+       sai de cena e as duas linhas ficam completas. */
+    .pf-hero-stat-card-accent {
+        display: none;
+    }
+
     .pf-hero-stat-ring {
         grid-column: 1 / -1;
         flex-direction: row;
