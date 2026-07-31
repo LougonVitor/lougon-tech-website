@@ -862,29 +862,33 @@
         max-width: 480px;
     }
 
+    /* Mesmo desenho do desktop, só menor: o `zoom` diagrama o mock numa largura
+       maior que a tela e encolhe tudo na mesma proporção, em vez de reempilhar
+       os cards e virar um layout de celular. Os degraus abaixo mantêm essa
+       largura de diagramação sempre perto dos ~490px do desktop. */
     .pf-hero-laptop {
         transform: none;
-        padding: 14px;
+        zoom: 0.95;
     }
 
-    .pf-hero-stats-row {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    /* Com duas colunas o card de aportes sobraria sozinho na última linha:
-       sai de cena e as duas linhas ficam completas. */
+    /* Sem o card de aportes a linha ficaria com uma coluna vazia. */
     .pf-hero-stat-card-accent {
         display: none;
     }
 
-    .pf-hero-stat-ring {
-        grid-column: 1 / -1;
-        flex-direction: row;
-        gap: 12px;
-        padding: 10px 14px;
+    .pf-hero-stats-row {
+        grid-template-columns: auto 1fr 1fr;
     }
+}
 
-    .pf-hero-bottom-row {
-        grid-template-columns: 1fr;
+@media (max-width: 480px) {
+    .pf-hero-laptop {
+        zoom: 0.85;
+    }
+}
+
+@media (max-width: 400px) {
+    .pf-hero-laptop {
+        zoom: 0.7;
     }
 }
